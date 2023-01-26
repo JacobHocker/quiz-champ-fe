@@ -1,0 +1,28 @@
+@use '../../partials/colors';
+@use '../../partials/styles';
+@import '../../partials/mixins';
+
+// WHOLE HOME CONTAINER
+.home-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+// HOME HEADER
+.home-header{
+    margin-top: 1.5rem;
+}
+// HOME PAGE LOGO
+.logo-lg-home{
+    width: 20rem;
+    @include medium{
+        width: 27rem;
+    }
+    @include large{
+        width: 31rem;
+    }
+    @include x-large{
+        width: 35rem;
+    }
+}

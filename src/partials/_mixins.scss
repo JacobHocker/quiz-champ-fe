@@ -1,12 +1,12 @@
-@mixin tablet {
+@mixin medium {
     @media (min-width: 600px) { @content; }
 }
 
-@mixin desktop-sm {
+@mixin large {
     @media (min-width: 900px) { @content; }
 }
 
-@mixin desktop {
+@mixin x-large {
     @media (min-width: 1200px) { @content; }
 }
 
