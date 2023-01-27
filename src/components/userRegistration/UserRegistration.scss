@@ -1,0 +1,61 @@
+@use '../../partials/colors';
+@use '../../partials/styles';
+@import '../../partials/mixins';
+
+/* ! AVATAR AUTH BUTTON */
+.avatar-auth-btn{
+    margin-top: 1rem;
+    background-color: transparent;
+    font-size: 1.25rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border: 2.5px solid colors.$purple-accent;
+    outline: none;
+    color: colors.$text-lt;
+    transition: 0.25s ease-in-out;
+}
+.avatar-auth-btn:hover{
+    background-color: colors.$purple-accent;
+    cursor: pointer;
+    color: colors.$purple-bk;
+}
+
+/* ! REGISTER INPUT */
+.reg-input-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.reg-input-container label{
+    font-size: 2rem;
+    margin-top: 0.5rem;
+}
+
+/* USER SELECT */
+.create-user-select{
+    font-size: 1.25rem;
+    color: colors.$text-lt;
+    font-family: styles.$general-text;
+    background-color: transparent;
+    border: 2px solid colors.$purple-secondary;
+    text-align: center;
+    color: colors.$text-placeholder;
+    padding: 0.5rem 1rem;
+    &:focus{
+        outline: none;
+    }
+    &:hover{
+        cursor: pointer;
+        border: 2px solid colors.$white;
+    }
+}
+
+.register-account-btn-container{
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    
+
