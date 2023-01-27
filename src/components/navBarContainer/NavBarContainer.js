@@ -20,8 +20,12 @@ export default function NavBarContainer() {
                                 <h2 className='nav-link'>Quizzes</h2>
                             </Nav.Link>
                             <Nav.Link href='/admin'>
-                                <h2>Admin</h2>
+                                <h2 className='nav-link'>Admin</h2>
                             </Nav.Link>
+                            <Nav.Link href='/profile'>
+                                <h2 className='nav-link'>Username</h2>
+                            </Nav.Link>
+                            <button>Logout</button>
                         </Nav>
                     </div>
                 </Navbar.Collapse>
