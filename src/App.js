@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Routes, Route} from 'react-router-dom';
+import AdminContainer from './components/adminContainer/AdminContainer';
 import Home from './components/home/Home';
 import NavBarContainer from './components/navBarContainer/NavBarContainer';
 
@@ -23,6 +24,7 @@ export default function App() {
         <NavBarContainer />
         <Routes>
           <Route element={<Home />} path='/' />
+          <Route element={<AdminContainer />} path='admin' />
         </Routes>
       </div>
     
