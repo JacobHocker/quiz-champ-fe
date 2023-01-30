@@ -1,0 +1,82 @@
+@use '../../partials/colors';
+@use '../../partials/styles';
+@import '../../partials/mixins';
+
+.avatar-modal{
+    width: 100%;
+    height: 100%;
+    background-color: colors.$purple-secondary-var-op;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+.avatar-modal-content{
+    width: 100%;
+    
+}
+.avatar-modal-header, .avatar-modal-footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+}
+.avatar-modal-title{
+    margin: 0;
+}
+.avatar-modal-body{
+    padding: 2rem 6rem;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    overflow-y: scroll;
+    @include medium{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    @include large{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+.selected-reg-avatar{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    border: 1.5px solid colors.$purple-accent;
+    transform: scale(125%);
+    @include medium{
+        width: 5.5rem;
+        height: 5.5rem;
+    }
+    @include large{
+        width: 6rem;
+        height: 6rem;
+    }
+}
+.reg-avatar{
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.2s ease-in-out;
+    &:hover{
+        cursor: pointer;
+        transform: scale(110%);
+        border: 1.5px solid colors.$white;
+    }
+    @include medium{
+        width: 5rem;
+        height: 5rem;
+    }
+    @include large{
+        width: 5.5rem;
+        height: 5.5rem;
+    }
+
+}
