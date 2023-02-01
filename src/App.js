@@ -8,6 +8,7 @@ import UserAuthContainer from './components/userAuthContainer/UserAuthContainer'
 import AdminContainer from './components/adminContainer/AdminContainer';
 import Home from './components/home/Home';
 import NavBarContainer from './components/navBarContainer/NavBarContainer';
+import QuizListContainer from './components/quizListContainer/QuizListContainer';
 
 export default function App() {
 
@@ -41,7 +42,7 @@ export default function App() {
             .then ( (response) => {
                 setUserObj(response)
         })
-  }, [authState.id, userObj])
+  }, [authState, authState.id, userObj])
 
   const userId = authState.id;
   const username = authState.username;
@@ -56,6 +57,7 @@ export default function App() {
           <NavBarContainer />
           <Routes>
             <Route element={<Home />} path='/' />
+            <Route element={<QuizListContainer />} path='quizzes' />
             <Route element={<AdminContainer />} path='admin' />
             <Route element={<UserRegistration />} path='registration' />
             <Route element={<UserLogin />} path='login' />

@@ -1,0 +1,122 @@
+@use '../../partials/colors';
+@use '../../partials/styles';
+@import '../../partials/mixins';
+
+// QUIZ LIST DISPLAY PAGE
+.quiz-list-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+// QUIZ LIST HEADER
+.quiz-list-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid colors.$blue-secondary;
+    padding-bottom: 2rem;
+}
+.quiz-list-header h1{
+    font-size: 1.5rem;
+    font-family: styles.$special-text;
+    margin-bottom: 1rem;
+    @include medium {
+        font-size: 1.75rem;
+    }
+    @include large{
+        font-size: 2rem;
+    }
+}
+// QUIZ LIST CONTAINER
+.quiz-list-container{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    @include medium {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    @include large {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+// QUIZ CARD 
+.quiz-list-card{
+    display: flex;  
+    height: 15rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    background-image: linear-gradient(to bottom, colors.$purple-primary-dk, colors.$blue-secondary, colors.$purple-primary-dk);
+    overflow: hidden;
+    &:hover{
+        cursor: pointer;
+        border-radius: 7px;
+        border: 1px solid colors.$blue-accent;
+    }
+    @include medium{
+        height: 20rem;
+    }
+}
+// CARD THUMNAIL
+.quiz-thumbnail-container{
+    width: 100%;
+}
+.quiz-card-thumb{
+    width: 100%;
+    height:10rem;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 2px;
+    @include medium {
+        height: 15rem;
+    }
+}
+// CARD HEADER
+.quiz-card-header{
+    font-family: styles.$special-text;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+.quiz-card-header h1{
+    font-size: 1.1rem;
+}
+// CARD BODY
+.quiz-card-body{
+    display: flex;
+    justify-content: center;
+    align-items:baseline;
+    margin-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+.quiz-card-body h2{
+    font-size: 0.95rem;
+}
+
+.star-container{
+    margin-left: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.easy-star{
+    color: limegreen;
+    font-size: 0.75rem;
+}
+.medium-star{
+    color: gold;
+    font-size: 0.75rem;
+}
+.hard-star{
+    color: #8b0000;
+    font-size: 0.75rem;
+}

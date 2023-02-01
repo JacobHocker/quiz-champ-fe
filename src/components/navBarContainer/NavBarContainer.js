@@ -34,6 +34,15 @@ export default function NavBarContainer() {
                             <Nav.Link href='/quizzes'>
                                 <h2 className='nav-link'>Quizzes</h2>
                             </Nav.Link>
+                            {/* <Nav.Link href='/categories'>
+                                <h2 className='nav-link'>Categories</h2>
+                            </Nav.Link>
+                            <Nav.Link href='/search'>
+                                <h2 className='nav-link'>Search</h2>
+                            </Nav.Link>
+                            <Nav.Link href='/forum'>
+                                <h2 className='nav-link'>Forum</h2>
+                            </Nav.Link> */}
                             <Nav.Link href='/admin'>
                                 <h2 className='nav-link'>Admin</h2>
                             </Nav.Link>

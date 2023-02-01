@@ -1,5 +1,8 @@
 @use './partials/colors';
 @use './partials/styles';
+@import './partials/mixins';
+
+// BODY STYLES
 body {
   margin: 0;
   font-family: styles.$general-text, sans-serif;
@@ -11,4 +14,85 @@ body {
   background-attachment: fixed;
 }
 
+// GENERAL AND REUSABLE STYLES
+
+// BUTTON STYLES
+.blue-btn{
+  background-color: transparent;
+  padding: 1rem;
+  color: colors.$white;
+  outline: none;
+  border: 2px solid colors.$blue-accent;
+  font-size: 0.75rem;
+  transition: 0.2s ease-in-out;
+  &:hover{
+    cursor: pointer;
+    background-color: colors.$blue-accent;
+    color: colors.$purple-bk;
+  }
+  @include medium{
+    font-size: 1rem;
+  }
+  @include large{
+    font-size: 1.25rem;
+  }
+}
+.neon-blue-lt-btn{
+  background-color: transparent;
+  padding: 1rem;
+  color: colors.$white;
+  outline: none;
+  border: 2px solid colors.$neon-blue-accent-lt;
+  font-size: 0.75rem;
+  transition: 0.2s ease-in-out;
+  &:hover{
+    cursor: pointer;
+    background-color: colors.$neon-blue-accent-lt;
+  }
+  @include medium{
+    font-size: 1rem;
+  }
+  @include large{
+    font-size: 1.25rem;
+  }
+}
+.neon-blue-dk-btn{
+  background-color: transparent;
+  padding: 1rem;
+  color: colors.$white;
+  outline: none;
+  border: 2px solid colors.$neon-blue-accent-dk;
+  font-size: 0.75rem;
+  transition: 0.2s ease-in-out;
+  &:hover{
+    cursor: pointer;
+    background-color: colors.$neon-blue-accent-dk;
+  }
+  @include medium{
+    font-size: 1rem;
+  }
+  @include large{
+    font-size: 1.25rem;
+  }
+}
+.neon-purple-btn{
+  background-color: transparent;
+  padding: 1rem;
+  color: colors.$white;
+  outline: none;
+  border: 2px solid colors.$neon-purple-accent;
+  font-size: 0.75rem;
+  transition: 0.2s ease-in-out;
+  &:hover{
+    cursor: pointer;
+    background-color: colors.$neon-purple-accent;
+    color: colors.$purple-bk;
+  }
+  @include medium{
+    font-size: 1rem;
+  }
+  @include large{
+    font-size: 1.25rem;
+  }
+}
 
