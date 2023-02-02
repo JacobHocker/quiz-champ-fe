@@ -20,8 +20,8 @@ export default function Timer({ counter, setCounter, currentQuestion, setOptionC
     }, [counter])
     
     return (
-        <div className={counter < 10 ? 'low-timer-container' : 'timer-container'}>
-            <div className={counter < 10 ? 'low-timer-display' : 'timer-display'}>
+        <div className={counter <= 10 ? 'low-timer-container' : 'timer-container'}>
+            <div className={counter <= 10 ? 'low-timer-display' : 'timer-display'}>
                 <h1>{counter}</h1>
             </div>
         </div>

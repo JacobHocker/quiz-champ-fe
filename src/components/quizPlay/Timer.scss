@@ -5,13 +5,17 @@
 // FULL TIMER DISPLAY
 .timer-container{
     background-color: colors.$grey-op;
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1.5px solid colors.$blue-accent;
     border-radius: 50%;
+    @include large{
+        width: 5rem;
+        height: 5rem;
+    }
 }
 .timer-display{
     font-family: styles.$special-text;
@@ -20,13 +24,17 @@
 // LOW TIMER DISPLAY
 .low-timer-container{
     background-color: colors.$grey-op;
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1.5px solid colors.$red;
+    border: 2px solid colors.$red;
     border-radius: 50%;
+    @include large{
+        width: 5rem;
+        height: 5rem;
+    }
 }
 .low-timer-display{
     font-family: styles.$special-text;

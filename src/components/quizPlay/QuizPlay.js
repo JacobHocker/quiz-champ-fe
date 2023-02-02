@@ -29,16 +29,7 @@ export default function QuizPlay({ questionList }) {
     
     return (
         <div className='quiz-play-container'>
-            {/* <Timer 
-            counter={counter} 
-            setCounter={setCounter} 
-            currentQuestion={currentQuestion}
-            setOptionChosen={setOptionChosen}
-            finishQuiz={finishQuiz}
-            nextQuestion={nextQuestion}
-            /> */}
             <div className='quiz-play-question'>
-                
                 <h1>{questionList[currentQuestion].questionContent}</h1>
                 {questionList[currentQuestion].questionImage === "N/A" ?
                 <div></div> :
@@ -62,6 +53,16 @@ export default function QuizPlay({ questionList }) {
                 className={optionChosen === 'D' ? 'quiz-option-chosen' : 'quiz-option-button'}>
                     {questionList[currentQuestion].optionD}
                 </button>
+            </div>
+            <div className='timer-play-container'>
+                <Timer 
+                    counter={counter} 
+                    setCounter={setCounter} 
+                    currentQuestion={currentQuestion}
+                    setOptionChosen={setOptionChosen}
+                    finishQuiz={finishQuiz}
+                    nextQuestion={nextQuestion}
+                />
             </div>
             <div className='quiz-play-next-container'>
                 {currentQuestion === questionList.length - 1 ?
