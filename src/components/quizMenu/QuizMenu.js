@@ -59,21 +59,24 @@ export default function QuizMenu({ quizObject, scoreArr }) {
                 </div>
             }
             <div className='quiz-display-body'>
-                {scoreArr.data && <h1>Attempts Remaining: {scoreArr.data.length} / 2</h1>}
-                <h1>Difficulty: {quizObject.quizDifficulty}</h1>
-                <p> {quizObject.quizDescription}</p>
-            </div>
-            <div>
+                <h1>Stats</h1>
+                {scoreArr.data && <h2>Attempt: {scoreArr.data.length} / 2</h2>}
                 {scoreArr.data && 
                 scoreArr.data.length === 0 ?
                 <div></div>
                 : 
                 <div>
-                    <h1>{username}'s High Scores:</h1>
-                    <h1>Highest Score: {highScore}</h1>
-                    <h1>Total Crowns Earned: {highCrown}</h1>
+                    <h2>{username}'s High Scores:</h2>
+                    <h2>Highest Score: {highScore}</h2>
+                    <h2>Total Crowns Earned: {highCrown}</h2>
                 </div>
                 }
+                
+            </div>
+            <div className='quiz-display-info'>
+                <h1>About</h1>
+                <h2>Difficulty: {quizObject.quizDifficulty}</h2>
+                <p> {quizObject.quizDescription}</p>
             </div> 
             
             

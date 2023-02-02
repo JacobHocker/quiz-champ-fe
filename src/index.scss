@@ -69,10 +69,10 @@ body {
     background-color: colors.$neon-blue-accent-dk;
   }
   @include medium{
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   @include large{
-    font-size: 1.25rem;
+    font-size: 1.75rem;
   }
 }
 .neon-purple-btn{
@@ -89,10 +89,10 @@ body {
     color: colors.$purple-bk;
   }
   @include medium{
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   @include large{
-    font-size: 1.25rem;
+    font-size: 1.75rem;
   }
 }
 

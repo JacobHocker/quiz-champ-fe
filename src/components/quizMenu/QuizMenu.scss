@@ -18,6 +18,7 @@
     justify-content: center;
     align-items: center;
     @include medium{
+        width: 90%;
         flex-direction: row;
         justify-content: space-evenly;
     }
@@ -28,6 +29,8 @@
     margin-bottom: 0.75rem;
     @include medium {
         width: 20rem;
+        border-radius: 5px;
+        margin-top: 20px;
     }
     @include large{
         width: 25rem;
@@ -43,33 +46,38 @@
 //QUIZ DISPLAY BODY
 .quiz-display-body{
     display: flex;
-    width: 95%;
+    width: 75%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1.5px solid colors.$neon-purple-accent;
 }
 .quiz-display-body h1{
+    font-family: styles.$special-text;
+    font-size: 2rem;
+    @include medium{
+        font-size: 2.25rem
+    }
+}
+.quiz-display-body h2{
     font-family: styles.$header-text;
+    font-size: 1.5rem;
     @include medium{
-        font-size: 1.85rem
+        font-size: 1.75rem
     }
 }
-.quiz-display-body p{
-    font-family: styles.$general-text;
-    font-size: 1rem;
-    margin-top: 1rem;
-    @include medium{
-        font-size: 1.25rem;
-    }
 
-}
 // START QUIZ CONTAINER
 .start-quiz-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1.5px solid colors.$neon-purple-accent;
 }
 .start-quiz-container h1{
     font-family: styles.$special-text;
@@ -77,4 +85,36 @@
     @include medium{
         font-size: 1.65rem;
     }
+}
+// QUIZ DISPLAY INFO
+.quiz-display-info{
+    display: flex;
+    width: 75%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.quiz-display-info h1{
+    font-family: styles.$special-text;
+    font-size: 2rem;
+    @include medium{
+        font-size: 2.25rem
+    }
+}
+.quiz-display-info h2{
+    font-family: styles.$header-text;
+    font-size: 1.5rem;
+    @include medium{
+        font-size: 1.75rem
+    }
+}
+.quiz-display-info p{
+    font-family: styles.$general-text;
+    font-size: 1rem;
+    margin-top: 1rem;
+    @include medium{
+        font-size: 1.25rem;
+    }
+
 }
