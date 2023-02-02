@@ -1,0 +1,39 @@
+@use '../../partials/colors';
+@use '../../partials/styles';
+@import '../../partials/mixins';
+// QUIZ RESULTS CONTAINER
+.quiz-results-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+// QUIZ RESULTS
+.quiz-results{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.quiz-results h1{
+    font-family: styles.$special-text;
+    font-size: 1.5rem;
+    border-bottom: 1.5px solid colors.$neon-purple-accent;
+    @include medium {
+        font-size: 1.75rem;
+    }
+    @include large {
+        font-size: 2rem;
+    }
+}
+.quiz-results h2{
+    font-family: styles.$special-text;
+    font-size: 1.5rem;
+    @include medium {
+        font-size: 1.75rem;
+    }
+    @include large {
+        font-size: 2rem;
+    }
+}
