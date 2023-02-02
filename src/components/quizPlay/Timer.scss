@@ -1,0 +1,34 @@
+@use '../../partials/colors';
+@use '../../partials/styles';
+@import '../../partials/mixins';
+
+// FULL TIMER DISPLAY
+.timer-container{
+    background-color: colors.$grey-op;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1.5px solid colors.$blue-accent;
+    border-radius: 50%;
+}
+.timer-display{
+    font-family: styles.$special-text;
+    color: colors.$blue-accent;
+}
+// LOW TIMER DISPLAY
+.low-timer-container{
+    background-color: colors.$grey-op;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1.5px solid colors.$red;
+    border-radius: 50%;
+}
+.low-timer-display{
+    font-family: styles.$special-text;
+    color: colors.$red;
+}

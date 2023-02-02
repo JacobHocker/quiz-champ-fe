@@ -1,0 +1,130 @@
+@use '../../partials/colors';
+@use '../../partials/styles';
+@import '../../partials/mixins';
+
+// ENTIRE QUIZ PLAY PAGE
+.quiz-play-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+// QUIZ PLAY QUESTION SECTION
+.quiz-play-question{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.quiz-play-question h1{
+    font-family: styles.$header-text;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    @include medium{
+        font-size: 1.5rem;
+    }
+    @include large{
+        font-size: 2rem;
+    }
+}
+.quiz-play-image{
+    width: 100%;
+    border-radius: 5px;
+}
+// QUIZ PLAY MULTIPLE CHOICE CONTAINER
+.quiz-play-choices{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+// MULTIPLE CHOICE BUTTONS
+.quiz-option-button{
+    font-family: styles.$header-text;
+    font-size: 1rem;
+    padding: 1rem;
+    outline: none;
+    border: 2px solid colors.$purple-accent;
+    border-radius: 25px;
+    color: white;
+    background: transparent;
+    transition: 0.17s ease-in;
+    &:hover{
+        background: colors.$purple-accent;
+        cursor: pointer;
+    }
+    @include medium{
+        font-size: 1.25rem;
+    }
+    @include large{
+        font-size: 1.5rem;
+    }
+}
+.quiz-option-chosen{
+    font-family: styles.$header-text;
+    font-size: 1rem;
+    padding: 1rem;
+    outline: none;
+    border: 2px solid colors.$neon-blue-accent-dk;
+    border-radius: 25px;
+    color: white;
+    background: colors.$neon-blue-accent-lt;
+    transition: 0.17s ease-in;
+    &:hover{
+        cursor: pointer;
+    }
+    @include medium{
+        font-size: 1.25rem;
+    }
+    @include large{
+        font-size: 1.5rem;
+    }
+}
+// QUIZ FINISH & NEXT QUESTION
+.quiz-play-next-container{
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+.quiz-next{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: transparent;
+    outline: none;
+    border: 2px solid colors.$neon-purple-accent;
+    font-size: 1rem;
+    padding: 1rem;
+    color: colors.$white;
+    transition: 0.17s ease-in;
+    &:hover{
+        background-color: colors.$neon-purple-accent;
+        cursor: pointer;
+    }
+    @include medium{
+        font-size: 1.25rem;
+    }
+    @include large{
+        font-size: 1.5rem;
+    }
+}
+.quiz-finish{
+    background: transparent;
+    outline: none;
+    border: 2px solid colors.$neon-purple-accent;
+    font-size: 1rem;
+    padding: 1rem;
+    color: colors.$white;
+    transition: 0.17s ease-in;
+    &:hover{
+        background-color: colors.$neon-purple-accent;
+        cursor: pointer;
+    }
+    @include medium{
+        font-size: 1.25rem;
+    }
+    @include large{
+        font-size: 1.5rem;
+    }
+}
