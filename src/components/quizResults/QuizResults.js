@@ -3,6 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import { QuizContext } from '../../Helpers/Contexts';
 import { AuthContext } from '../../Helpers/AuthContext';
 import './QuizResults.scss';
+import platCrown from '../../assets/images/platinumCrown.png';
+import goldCrown from '../../assets/images/goldCrown.png';
+import silverCrown from '../../assets/images/silverCrown.jpeg';
+import bronzeCrown from '../../assets/images/bronzeCrown.png';
 import axios from 'axios';
 
 export default function QuizResults({  crownAmount, setCrownAmount }) {
@@ -54,6 +58,41 @@ export default function QuizResults({  crownAmount, setCrownAmount }) {
                 <h1>Crowns Earned</h1>
                 <h2> {crownAmount}</h2>
             </div>
+            {crownAmount === 5 ? 
+            <div className='crown-animation'>
+                <img src={platCrown} alt='platinum-crown' className='crown-result' />
+            </div>
+            : 
+            <div></div>
+            }
+            {crownAmount === 4 ? 
+            <div className='crown-animation'>
+                <img src={goldCrown} alt='platinum-crown' className='crown-result' />
+            </div>
+            : 
+            <div></div>
+            }
+            {crownAmount === 3 ? 
+            <div className='crown-animation'>
+                <img src={silverCrown} alt='platinum-crown' className='crown-result' />
+            </div>
+            : 
+            <div></div>
+            }
+            {crownAmount === 2 ? 
+            <div className='crown-animation'>
+                <img src={bronzeCrown} alt='platinum-crown' className='crown-result' />
+            </div>
+            : 
+            <div></div>
+            }
+            {crownAmount === 1 ? 
+            <div className='crown-animation'>
+                <img src={bronzeCrown} alt='platinum-crown' className='crown-result' />
+            </div>
+            : 
+            <div></div>
+            }
             <div className='return-to-quiz-container'>
                 <button className='neon-purple-btn' onClick={saveAndReturn}>
                     Return to Quizzes

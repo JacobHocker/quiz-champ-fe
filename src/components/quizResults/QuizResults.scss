@@ -14,7 +14,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
 }
 .quiz-results h1{
     font-family: styles.$special-text;
@@ -36,4 +36,36 @@
     @include large {
         font-size: 2rem;
     }
+}
+
+// CROWN ANIMATION SECTION
+.crown-animation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6rem;
+    
+}
+.crown-result{
+    width: 5rem;
+    position: absolute;
+    top: 470px;
+    animation-name: crownZoom;
+    animation-duration: 2.5s;
+    animation-delay: 0.05s;
+    animation-iteration-count: infinite;
+    @include medium{
+        top: 510px;
+    }
+    @include large{
+        top: 550px
+    }
+}
+@keyframes crownZoom {
+    0% {width: 5rem;}
+    20% {width: 6.5rem;}
+    40% {width: 8rem;}
+    60% {width: 9rem;}
+    80% {width: 8rem;}
+    100% {width: 6.5rem;}
 }
