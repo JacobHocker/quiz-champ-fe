@@ -43,6 +43,26 @@
         font-size: 2.25rem;
     }
 }
+// MAX ATTEMPTS
+.max-quiz-attempts{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.max-quiz-attempts h1{
+    font-family: styles.$header-text;
+    margin-left: 2.5rem;
+    font-size: 1.5rem;
+    color: colors.$red;
+    @include medium{
+        font-size: 1.75rem;
+    }
+    @include large{
+        font-size: 2rem;
+    }
+}
 //QUIZ DISPLAY BODY
 .quiz-display-body{
     display: flex;
@@ -68,7 +88,20 @@
         font-size: 1.75rem
     }
 }
-
+//QUIZ DISPLAY STATS 
+.quiz-display-stats{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.quiz-display-stats h2{
+    font-family: styles.$header-text;
+    font-size: 1.5rem;
+    @include medium{
+        font-size: 1.75rem
+    }
+}
 // START QUIZ CONTAINER
 .start-quiz-container{
     display: flex;

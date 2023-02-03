@@ -65,8 +65,7 @@ export default function QuizMenu({ quizObject, scoreArr }) {
                 scoreArr.data.length === 0 ?
                 <div></div>
                 : 
-                <div>
-                    <h2>{username}'s High Scores:</h2>
+                <div className='quiz-display-stats'>
                     <h2>Highest Score: {highScore}</h2>
                     <h2>Total Crowns Earned: {highCrown}</h2>
                 </div>
