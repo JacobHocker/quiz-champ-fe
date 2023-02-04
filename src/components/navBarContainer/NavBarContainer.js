@@ -31,18 +31,32 @@ export default function NavBarContainer() {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <div className='nav-list'>
                         <Nav className="me-auto">
-                            <Nav.Link href='/quizzes'>
-                                <h2 className='nav-link'>Quizzes</h2>
-                            </Nav.Link>
-                            {/* <Nav.Link href='/categories'>
-                                <h2 className='nav-link'>Categories</h2>
-                            </Nav.Link>
-                            <Nav.Link href='/search'>
-                                <h2 className='nav-link'>Search</h2>
-                            </Nav.Link>
-                            <Nav.Link href='/forum'>
-                                <h2 className='nav-link'>Forum</h2>
-                            </Nav.Link> */}
+                            <NavDropdown title='Quizzes' id="basic-nav-dropdown" className='nav-link'>
+                                <NavDropdown.Item href="/quizzes">
+                                    Quizzes
+                                </NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item href="/search">
+                                    Search
+                                </NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item href="/categories">
+                                    Categories
+                                </NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item href="/rules">
+                                    Rules & Rewards
+                                </NavDropdown.Item>
+                            </NavDropdown>
+                            <NavDropdown title='Community' id="basic-nav-dropdown" className='nav-link'>
+                                <NavDropdown.Item href="#action/3.1">
+                                    Forum
+                                </NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item href="#action/3.3">
+                                    Leaderboard
+                                </NavDropdown.Item>
+                            </NavDropdown>
                             <Nav.Link href='/admin'>
                                 <h2 className='nav-link'>Admin</h2>
                             </Nav.Link>
@@ -51,7 +65,7 @@ export default function NavBarContainer() {
                                     <img src={userInfo.data.avatar} className='nav-avatar' alt={userInfo.data.username} />
                                 }
                             </Nav.Link>
-                            <button onClick={logout}>Logout</button>
+                            <button onClick={logout} className='nav-btn'>Logout</button>
                         </Nav>
                     </div>
                 </Navbar.Collapse>

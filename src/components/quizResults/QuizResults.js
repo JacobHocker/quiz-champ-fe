@@ -67,28 +67,28 @@ export default function QuizResults({  crownAmount, setCrownAmount }) {
             }
             {crownAmount === 4 ? 
             <div className='crown-animation'>
-                <img src={goldCrown} alt='platinum-crown' className='crown-result' />
+                <img src={goldCrown} alt='gold-crown' className='crown-result' />
             </div>
             : 
             <div></div>
             }
             {crownAmount === 3 ? 
             <div className='crown-animation'>
-                <img src={silverCrown} alt='platinum-crown' className='crown-result' />
+                <img src={silverCrown} alt='silver-crown' className='crown-result' />
             </div>
             : 
             <div></div>
             }
             {crownAmount === 2 ? 
             <div className='crown-animation'>
-                <img src={bronzeCrown} alt='platinum-crown' className='crown-result' />
+                <img src={bronzeCrown} alt='bronze-crown' className='crown-result' />
             </div>
             : 
             <div></div>
             }
             {crownAmount === 1 ? 
             <div className='crown-animation'>
-                <img src={bronzeCrown} alt='platinum-crown' className='crown-result' />
+                <img src={bronzeCrown} alt='bronze-crown' className='crown-result' />
             </div>
             : 
             <div></div>

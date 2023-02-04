@@ -63,3 +63,16 @@
     object-position: center;
     border-radius: 50%;
 }
+// NAV BUTTON
+.nav-btn{
+    font-family: styles.$header-text;
+    background: transparent;
+    outline: none;
+    color: white;
+    width: 6rem;
+    padding: 0.5rem;
+    border: 2px solid colors.$neon-purple-accent;
+    &:hover{
+        background: colors.$neon-purple-accent;
+    }
+}
