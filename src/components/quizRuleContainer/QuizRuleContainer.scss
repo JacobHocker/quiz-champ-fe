@@ -24,19 +24,53 @@
     border-bottom: 1px solid colors.$blue-accent;
 }
 // QUIZ RULES
-.quiz-rules{
+.rules-section{
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.quiz-rules h2{
+.rules-section h2{
     font-family: styles.$special-text;
     font-size: 1.75rem;
 }
 // QUIZ RULE LIST
-.quiz-rule-list{
+.rule-list{
     font-family: styles.$header-text;
     list-style: square;
+}
+// QUIZ REWARD CONTAINER
+.quiz-reward-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+// QUIZ REWARD HEADER
+.quiz-reward-header h1{
+    font-family: styles.$special-text;
+    font-size: 2.5rem;
+    border-bottom: 1px solid colors.$blue-accent;
+}
+// QUIZ REWARD TABLE
+.quiz-reward-table{
+    background-color: colors.$blue-secondary-op;
+    border-collapse: collapse;
+    border: 5px solid colors.$blue-accent;
+    width: 100%;
+    margin-top: 2rem;
+}
+.quiz-reward-table th{
+    border: 2px solid colors.$blue-accent;
+    text-align: center;
+    font-family: styles.$special-text;
+    padding: 8px;
+}
+.quiz-reward-table td{
+    border: 2px solid colors.$blue-accent;
+    font-family: styles.$header-text;
+    padding: 8px;
+    text-align: center;
 }
