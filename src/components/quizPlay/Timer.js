@@ -1,14 +1,20 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useContext, useRef } from 'react';
 import './Timer.scss';
 import { QuizContext } from '../../Helpers/Contexts';
 
 export default function Timer({ counter, setCounter, currentQuestion, setOptionChosen, finishQuiz, nextQuestion }) {
     const { questionList } = useContext(QuizContext);
+    const timerRef = useRef();
 
     useEffect(() => {
-        counter > 0 && setTimeout(() => 
-            setCounter(counter - 1), 1000
-        )
+        if (timerRef.current) {
+            clearTimeout(timerRef.current)
+            timerRef.current = null;
+        }
+        if (counter > 0) {
+            timerRef.current = setTimeout(() => setCounter(counter - 1), 1000);
+        }
+        
         if(counter === 0 && currentQuestion === questionList.length - 1 ) {
             setOptionChosen("")
             finishQuiz()
@@ -18,6 +24,7 @@ export default function Timer({ counter, setCounter, currentQuestion, setOptionC
             setCounter(30)
         }
     }, [counter])
+    
     
     return (
         <div className={counter <= 10 ? 'low-timer-container' : 'timer-container'}>

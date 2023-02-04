@@ -1,0 +1,42 @@
+@use '../../partials/colors';
+@use '../../partials/styles';
+@import '../../partials/mixins';
+
+// QUIZ RULE/REWARD CONTAINER
+.quiz-rule-reward-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+// QUIZ RULE CONTAINER
+.quiz-rule-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+// QUIZ RULE HEADER
+.quiz-rule-header h1{
+    font-family: styles.$special-text;
+    font-size: 2.5rem;
+    border-bottom: 1px solid colors.$blue-accent;
+}
+// QUIZ RULES
+.quiz-rules{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.quiz-rules h2{
+    font-family: styles.$special-text;
+    font-size: 1.75rem;
+}
+// QUIZ RULE LIST
+.quiz-rule-list{
+    font-family: styles.$header-text;
+    list-style: square;
+}
