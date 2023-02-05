@@ -55,6 +55,18 @@
     border-bottom: 1px solid colors.$blue-accent;
 }
 // QUIZ REWARD TABLE
+.quiz-reward-table-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.quiz-reward-table-container label{
+    font-family: styles.$special-text;
+    margin-bottom: -1rem;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+}
 .quiz-reward-table{
     background-color: colors.$blue-secondary-op;
     border-collapse: collapse;
@@ -73,4 +85,9 @@
     font-family: styles.$header-text;
     padding: 8px;
     text-align: center;
+}
+// TIER TABLE
+/// CROWN TABLE IMAGE
+.table-crown{
+    width: 3rem;
 }

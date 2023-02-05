@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { QuizContext } from '../../Helpers/Contexts';
 import { AuthContext } from '../../Helpers/AuthContext';
 import './QuizResults.scss';
-import platCrown from '../../assets/images/platinumCrown.png';
+import platCrown from '../../assets/images/platCrown.png';
 import goldCrown from '../../assets/images/goldCrown.png';
-import silverCrown from '../../assets/images/silverCrown.jpeg';
+import silverCrown from '../../assets/images/silverCrown.png';
 import bronzeCrown from '../../assets/images/bronzeCrown.png';
 import axios from 'axios';
 
