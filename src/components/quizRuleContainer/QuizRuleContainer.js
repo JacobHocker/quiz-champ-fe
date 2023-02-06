@@ -16,6 +16,132 @@ export default function QuizRuleContainer() {
 
     return (
         <div className='quiz-rule-reward-container'>
+            <section div='htp-container'>
+                <div className='htp-header'>
+                    <h1>How To Play</h1>
+                </div>
+                <div className='htp-body'>
+                    <ul className='htp-list'>
+                        <li>Answer as many questions in the quiz correctly as possible!</li>
+                        <li>The higher the score the more crowns you receive!</li>
+                        <li>More crowns means higher on the leaderboard!</li>
+                        <li>Can you be the Quiz Champ?</li>
+                    </ul>
+                    
+                </div>
+            </section>
+            <section className='quiz-reward-container'>
+                <div className='quiz-reward-header'>
+                    <h1>Rewards</h1>
+                </div>
+                <div className='quiz-reward-table-container'>
+                    <label>Quiz Rewards</label>
+                    <table className='quiz-reward-table'>
+                        <thead>
+                            <tr>
+                                <th>Score</th>
+                                <th>Crowns</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>100%</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>90% - 99%</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>80% - 89%</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>70% - 79%</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>60% - 69%</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>0% - 59%</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div className='quiz-reward-table-container'>
+                    <label>Crown Tier</label>
+                    <table className='quiz-reward-table'>
+                        <thead>
+                            <tr>
+                                <th>Tier</th>
+                                <th>Emblem</th>
+                                <th>Crowns</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>X</td>
+                                <td><img src={blackCrown} alt='bronze-crown' className='table-crown' /></td>
+                                <td>1,000+</td>
+                            </tr>
+                            <tr>
+                                <td>IX</td>
+                                <td><img src={rainbowCrown} alt='bronze-crown' className='table-crown' /></td>
+                                <td>500-999</td>
+                            </tr>
+                            <tr>
+                                <td>VIII</td>
+                                <td><img src={amethystCrown} alt='bronze-crown' className='table-crown' /></td>
+                                <td>400-499</td>
+                            </tr>
+                            <tr>
+                                <td>VII</td>
+                                <td><img src={sapphireCrown} alt='bronze-crown' className='table-crown' /></td>
+                                <td>300-399</td>
+                            </tr>
+                            <tr>
+                                <td>VI</td>
+                                <td><img src={emeraldCrown} alt='bronze-crown' className='table-crown' /></td>
+                                <td>200-299</td>
+                            </tr>
+                            <tr>
+                                <td>V</td>
+                                <td><img src={rubyCrown} alt='bronze-crown' className='table-crown' /></td>
+                                <td>150-199</td>
+                            </tr>
+                            <tr>
+                                <td>IV</td>
+                                <td><img src={platCrown} alt='bronze-crown' className='table-crown' /></td>
+                                <td>100-149</td>
+                            </tr>
+                            <tr>
+                                <td>III</td>
+                                <td><img src={goldCrown} alt='bronze-crown' className='table-crown' /></td>
+                                <td>75-99</td>
+                            </tr>
+                            <tr>
+                                <td>II</td>
+                                <td><img src={silverCrown} alt='bronze-crown' className='table-crown' /></td>
+                                <td>50-74</td>
+                            </tr>
+                            <tr>
+                                <td>I</td>
+                                <td><img src={bronzeCrown} alt='bronze-crown' className='table-crown' /></td>
+                                <td>25-49</td>
+                            </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>N/A</td>
+                                <td>0-24</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
             <section className='quiz-rule-container'>
                 <div className='quiz-rule-header'>
                     <h1>Rules</h1>
@@ -38,110 +164,7 @@ export default function QuizRuleContainer() {
                     </ul>
                 </div>
             </section>
-            <section className='quiz-reward-container'>
-                <div className='quiz-reward-header'>
-                    <h1>Rewards</h1>
-                </div>
-                <div className='quiz-reward-table-container'>
-                    <label>Quiz Rewards</label>
-                    <table className='quiz-reward-table'>
-                        <tr>
-                            <th>Score</th>
-                            <th>Crowns</th>
-                        </tr>
-                        <tr>
-                            <td>100%</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td>90% - 99%</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>80% - 89%</td>
-                            <td>3</td>
-                        </tr>
-                        <tr>
-                            <td>70% - 79%</td>
-                            <td>2</td>
-                        </tr>
-                        <tr>
-                            <td>60% - 69%</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td>0% - 59%</td>
-                            <td>0</td>
-                        </tr>
-                    </table>
-                </div>
-                
-                <div className='quiz-reward-table-container'>
-                    <label>Crown Tier</label>
-                    <table className='quiz-reward-table'>
-                        <tr>
-                            <th>Tier</th>
-                            <th>Emblem</th>
-                            <th>Crowns</th>
-                        </tr>
-                        <tr>
-                            <td>X</td>
-                            <td><img src={blackCrown} alt='bronze-crown' className='table-crown' /></td>
-                            <td>1,000+</td>
-                        </tr>
-                        <tr>
-                            <td>IX</td>
-                            <td><img src={rainbowCrown} alt='bronze-crown' className='table-crown' /></td>
-                            <td>500-999</td>
-                        </tr>
-                        <tr>
-                            <td>VIII</td>
-                            <td><img src={amethystCrown} alt='bronze-crown' className='table-crown' /></td>
-                            <td>400-499</td>
-                        </tr>
-                        <tr>
-                            <td>VII</td>
-                            <td><img src={sapphireCrown} alt='bronze-crown' className='table-crown' /></td>
-                            <td>300-399</td>
-                        </tr>
-                        <tr>
-                            <td>VI</td>
-                            <td><img src={emeraldCrown} alt='bronze-crown' className='table-crown' /></td>
-                            <td>200-299</td>
-                        </tr>
-                        <tr>
-                            <td>V</td>
-                            <td><img src={rubyCrown} alt='bronze-crown' className='table-crown' /></td>
-                            <td>150-199</td>
-                        </tr>
-                        <tr>
-                            <td>IV</td>
-                            <td><img src={platCrown} alt='bronze-crown' className='table-crown' /></td>
-                            <td>100-149</td>
-                        </tr>
-                        <tr>
-                            <td>III</td>
-                            <td><img src={goldCrown} alt='bronze-crown' className='table-crown' /></td>
-                            <td>75-99</td>
-                        </tr>
-                        <tr>
-                            <td>II</td>
-                            <td><img src={silverCrown} alt='bronze-crown' className='table-crown' /></td>
-                            <td>50-74</td>
-                        </tr>
-                        <tr>
-                            <td>I</td>
-                            <td><img src={bronzeCrown} alt='bronze-crown' className='table-crown' /></td>
-                            <td>25-49</td>
-                        </tr>
-                        <tr>
-                            <td>0</td>
-                            <td>N/A</td>
-                            <td>0-24</td>
-                        </tr>
-                    </table>
-                </div>
-            </section>
+            
         </div>
     )
 }

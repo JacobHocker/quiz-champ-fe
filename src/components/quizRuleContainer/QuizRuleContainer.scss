@@ -22,6 +22,7 @@
     font-family: styles.$special-text;
     font-size: 2.5rem;
     border-bottom: 1px solid colors.$blue-accent;
+    margin-top: 2rem;
 }
 // QUIZ RULES
 .rules-section{
@@ -39,6 +40,9 @@
 .rule-list{
     font-family: styles.$header-text;
     list-style: square;
+    @include medium {
+        font-size: 1.25rem;
+    }
 }
 // QUIZ REWARD CONTAINER
 .quiz-reward-container{
@@ -53,6 +57,9 @@
     font-family: styles.$special-text;
     font-size: 2.5rem;
     border-bottom: 1px solid colors.$blue-accent;
+    @include medium{
+        font-size: 3rem;
+    }
 }
 // QUIZ REWARD TABLE
 .quiz-reward-table-container{
@@ -66,6 +73,9 @@
     margin-bottom: -1rem;
     margin-top: 2rem;
     font-size: 1.5rem;
+    @include medium{
+        font-size: 2rem;
+    }
 }
 .quiz-reward-table{
     background-color: colors.$blue-secondary-op;
@@ -73,6 +83,9 @@
     border: 5px solid colors.$blue-accent;
     width: 100%;
     margin-top: 2rem;
+    @include medium {
+        font-size: 1.25rem;
+    }
 }
 .quiz-reward-table th{
     border: 2px solid colors.$blue-accent;
@@ -90,4 +103,42 @@
 /// CROWN TABLE IMAGE
 .table-crown{
     width: 3rem;
+    @include medium {
+        width: 4rem;
+    }
+}
+
+//HOW TO PLAY CONTAINER
+.htp-container{
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.htp-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.htp-header h1{
+    font-family: styles.$special-text;
+    font-size: 2.5rem;
+    border-bottom: 1px solid colors.$blue-accent;
+    @include medium{
+        font-size: 3rem;
+    }
+}
+.htp-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.htp-list{
+    font-family: styles.$header-text;
+    list-style: none;
+    @include medium {
+        font-size: 1.25rem;
+    }
 }
