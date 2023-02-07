@@ -11,6 +11,7 @@ import NavBarContainer from './components/navBarContainer/NavBarContainer';
 import QuizListContainer from './components/quizListContainer/QuizListContainer';
 import QuizDisplayContainer from './components/quizDisplayContainer/QuizDisplayContainer';
 import QuizRuleContainer from './components/quizRuleContainer/QuizRuleContainer';
+import UserProfileContainer from './components/userProfileContainer/UserProfileContainer';
 
 export default function App() {
 
@@ -61,6 +62,7 @@ export default function App() {
             <Route element={<Home />} path='/' />
             <Route element={<QuizListContainer />} path='quizzes' />
             <Route element={<QuizDisplayContainer />} path='quiz/:id' />
+            <Route element={<UserProfileContainer />} path='profile' />
             <Route element={<QuizRuleContainer />} path='rules-rewards-info' />
             <Route element={<AdminContainer />} path='admin' />
             <Route element={<UserRegistration />} path='registration' />

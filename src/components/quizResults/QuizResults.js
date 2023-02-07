@@ -24,7 +24,7 @@ export default function QuizResults({  crownAmount, setCrownAmount }) {
             }
         }
         
-    }, [scoreArr.data])
+    }, [scoreArr])
     
     const saveAndReturn = () => {
         let totalCrown = userObj.data.totalCrown + crownAmount
