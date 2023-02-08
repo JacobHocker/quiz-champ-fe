@@ -44,7 +44,7 @@ export default function NavBarContainer() {
                                     Categories
                                 </NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href="/rules">
+                                <NavDropdown.Item href="/rules-rewards-info">
                                     Rules & Rewards
                                 </NavDropdown.Item>
                             </NavDropdown>

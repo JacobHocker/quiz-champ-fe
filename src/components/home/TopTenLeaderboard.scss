@@ -1,0 +1,41 @@
+@use '../../partials/colors';
+@use '../../partials/styles';
+@import '../../partials/mixins';
+
+//TOP TEN CONTAINER
+.top-ten-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    width: 75%;
+}
+.top-ten-container h1{
+    font-family: styles.$special-text;
+    font-size: 2rem;
+}
+//TOP TEN TABLE
+.top-ten-table{
+    margin-top: 1rem;
+    background: colors.$purple-secondary-op;
+    border: 3px solid colors.$neon-purple-accent;
+}
+.top-ten-table th{
+    text-align: center;
+    font-family: styles.$special-text;
+    border: 2.5px solid colors.$neon-purple-accent;
+    padding: 0.5rem;
+}
+.top-ten-table td{
+    text-align: center;
+    font-family: styles.$header-text;
+    border: 2px solid colors.$neon-purple-accent;
+    padding: 0.5rem;
+}
+
+
+// TOP TEN CROWN
+.top-ten-crown{
+    width: 3rem;
+}
