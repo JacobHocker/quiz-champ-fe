@@ -18,9 +18,9 @@
 }
 // NAV LOGO
 .nav-logo{
-    width: 5rem;
-    @include medium {
-        width: 5.5rem;
+    width: 5.25rem;
+    @include nav-medium {
+        width: 5.75rem;
     }
     @include large {
         width: 6.5rem;
@@ -28,7 +28,7 @@
 }
 // NAV LIST
 .me-auto{
-    @include medium {
+    @include nav-medium {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
@@ -48,7 +48,7 @@
         cursor: pointer;
         color: colors.$purple-accent;
     }
-    @include medium {
+    @include nav-medium {
         font-size: 1.75rem;
     }
     @include large {
@@ -66,7 +66,16 @@
     height: 4rem;
     object-fit: cover;
     object-position: center;
+    margin-bottom: 1rem;
     border-radius: 50%;
+    &:hover{
+        border: 1.5px solid colors.$blue-accent;
+        cursor: pointer;
+    }
+    @include nav-medium{
+        margin-bottom: 0;
+        margin-right: 0.75rem;
+    }
 }
 // NAV BUTTON
 .nav-btn{
@@ -75,8 +84,9 @@
     outline: none;
     color: white;
     width: 6rem;
-    padding: 0.5rem;
+    padding: 0.5rem 1.5rem;
     border: 2px solid colors.$neon-purple-accent;
+    transition: 0.2s ease-in;
     &:hover{
         background: colors.$neon-purple-accent;
     }

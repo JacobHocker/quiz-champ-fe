@@ -2,6 +2,10 @@
     @media (min-width: 600px) { @content; }
 }
 
+@mixin nav-medium {
+    @media (min-width: 765px) { @content; }
+}
+
 @mixin large {
     @media (min-width: 900px) { @content; }
 }

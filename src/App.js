@@ -62,7 +62,7 @@ export default function App() {
             <Route element={<Home />} path='/' />
             <Route element={<QuizListContainer />} path='quizzes' />
             <Route element={<QuizDisplayContainer />} path='quiz/:id' />
-            <Route element={<UserProfileContainer />} path='profile' />
+            <Route element={<UserProfileContainer />} path='profile/:username' />
             <Route element={<QuizRuleContainer />} path='rules-rewards-info' />
             <Route element={<AdminContainer />} path='admin' />
             <Route element={<UserRegistration />} path='registration' />
