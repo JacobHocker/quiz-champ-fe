@@ -15,12 +15,12 @@ export default function UserRegistration({ setShowLogin }) {
     const avatarList = [
         {
             id: 0,
-            avatarName: "Eevee Cute",
+            avatarName: "Eevee",
             avatarAddress: "https://i.etsystatic.com/17163755/r/il/725138/2206699948/il_570xN.2206699948_kwnk.jpg",
         },
         {
             id: 1,
-            avatarName: "Marshall",
+            avatarName: "Marshall Erikson",
             avatarAddress: "https://cdn3.whatculture.com/images/2018/11/bfc0b6e8ddef1ab0-600x338.jpg"
         },
         {
@@ -45,27 +45,27 @@ export default function UserRegistration({ setShowLogin }) {
         },
         {
             id: 6,
-            avatarName: "Captian",
+            avatarName: "Meliodas",
             avatarAddress: "https://www.looper.com/img/gallery/the-untold-truth-of-netflixs-the-seven-deadly-sins/intro-1630608821.jpg"
         },
         {
             id: 7,
-            avatarName: "Witch King",
+            avatarName: "Witch King of Angmar",
             avatarAddress: "https://pbs.twimg.com/media/ErjSa9PWMAM2kdS.jpg:large"
         },
         {
             id: 8,
-            avatarName: "Torb",
+            avatarName: "Torbjorn Lindholm",
             avatarAddress: "https://img.redbull.com/images/c_crop,w_1920,h_960,x_0,y_0,f_auto,q_auto/c_scale,w_1200/redbullcom/2018/10/04/3f2ed3db-304c-44d9-bfaa-658b6cb2f0ec/torbjorn-new-rework"
         },
         {
             id: 9,
-            avatarName: "Vader",
+            avatarName: "Darth Vader",
             avatarAddress: "https://cdn.vox-cdn.com/thumbor/h2ExWdFNSLueoj5DPJkMm2FtIoM=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/23545250/nso_wolf_trap_1600_x_900_star_wars_empire_strikes_back.jpg"
         },
         {
             id: 10,
-            avatarName: "Hermione",
+            avatarName: "Hermione Granger",
             avatarAddress: "https://courageousnerd.com/wp-content/uploads/2020/04/emmawatsonhermione.jpg"
         },
         {
@@ -80,7 +80,7 @@ export default function UserRegistration({ setShowLogin }) {
         },
         {
             id: 13,
-            avatarName: "Sam Jackson Marvel",
+            avatarName: "Nick Fury",
             avatarAddress: "https://images.indianexpress.com/2019/03/samuel-l-jackson-759-1.jpg"
         },
         {
@@ -92,6 +92,11 @@ export default function UserRegistration({ setShowLogin }) {
             id: 15,
             avatarName: "Master Chief",
             avatarAddress: "https://cdn1.dotesports.com/wp-content/uploads/2021/08/09111246/MasterChief.jpg"
+        },
+        {
+            id: 15,
+            avatarName: "Ted Mosby",
+            avatarAddress: "https://www.looper.com/img/gallery/the-ted-moment-in-how-i-met-your-mother-that-didnt-age-well/intro-1643255353.jpg"
         },
     ]
     const countries = [

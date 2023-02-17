@@ -55,6 +55,11 @@
         font-size: 2rem;
     }
 }
+
+
+.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
+    color: colors.$purple-accent;
+}
 // NAV USER AREA
 .nav-avatar{
     width: 4rem;
