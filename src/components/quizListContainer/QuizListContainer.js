@@ -73,9 +73,6 @@ export default function QuizListContainer() {
                             }
                         </div>
                         
-                        {/* <div className='quiz-card-footer'>
-                            <p>Quiz ID #: {val.id}</p>
-                        </div> */}
                         
                     </div>
                 ))}
