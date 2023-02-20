@@ -2,10 +2,133 @@
 @use '../../partials/styles';
 @import '../../partials/mixins';
 
+// WHOLE USER PROFILE CONTAINER
 .user-profile-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 2rem;
+}
+// PROFILE HEADER SECTION
+.user-profile-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include medium {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+.profile-header-title{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    align-items: center;
+}
+.profile-header-title h1{
+    font-family: styles.$special-text;
+    font-size: 2rem;
+    @include medium {
+        font-size: 2.5rem;
+    }
+    @include large {
+        font-size: 2.75rem;
+    }
+}
+
+//PROFILE AVATAR
+.profile-avatar{
+    width: 18rem;
+    border-radius: 2px;
+    @include medium {
+        margin-right: 1.5rem;
+        width: 20rem;
+    }
+    @include large{
+        margin-right: 2rem;
+        width: 22rem;
+    }
+}
+//PROFILE FLAG
+.profile-flag{
+    width: 2.5rem;
+    @include large{
+        width: 3rem;
+    }
+}
+
+//PROFILE BIO
+.user-profile-bio{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.75rem;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    @include medium{
+        margin-top: 2rem;
+    }
+}
+.user-profile-bio h1{
+    font-family: styles.$special-text;
+    font-size: 1.75rem;
+    @include medium {
+        font-size: 2.5rem;
+    }
+    @include large {
+        font-size: 2.75rem;
+    }
+}
+.user-profile-bio p {
+    font-family: styles.$header-text;
+    font-size: 1.15rem;
+    @include medium {
+        font-size: 1.35rem;
+    }
+    @include large {
+        font-size: 1.5rem;
+    }
+}
+
+// USER STAT SECTION
+.user-profile-stats{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+//PROFILE STATS
+.profile-stats{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.profile-stats h1{
+    font-family: styles.$special-text;
+    font-size: 1.75rem;
+    border-bottom: 1.25px solid colors.$blue-accent;
+    @include medium {
+        font-size: 2rem;
+    }
+}
+.profile-stats h2{
+    font-family: styles.$special-text;
+    font-size: 2rem;
+    @include medium {
+        font-size: 2.25rem;
+    }
+}
+.profile-crown{
+    width: 8rem;
+    @include medium{
+        width: 10rem;
+    }
+    @include large{
+        width: 11rem;
+    }
 }
