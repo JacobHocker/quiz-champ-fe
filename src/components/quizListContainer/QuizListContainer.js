@@ -10,11 +10,11 @@ export default function QuizListContainer() {
     let navigate = useNavigate();
     useEffect(() => {
         if(process.env.NODE_ENV === 'production') {
-            axios.get(`${process.env.PROD}/quizzes`).then((response) => {
+            axios.get(`${process.env.REACT_APP_PROD}/quizzes`).then((response) => {
                 setQuizListDisplay(response)
             })
         } else {
-            axios.get(`${process.env.DEV}/quizzes`).then((response) => {
+            axios.get(`${process.env.REACT_APP_DEV}/quizzes`).then((response) => {
                 setQuizListDisplay(response)
             })
         }

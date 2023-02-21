@@ -28,7 +28,7 @@ export default function App() {
 
   useEffect(() => {
     if (process.env.NODE_ENV === 'production') {
-        axios.get(`${process.env.PROD}/auth/user`, { headers: {
+        axios.get(`${process.env.REACT_APP_PROD}/auth/user`, { headers: {
           accessToken: localStorage.getItem("accessToken")
         },
       })
@@ -45,7 +45,7 @@ export default function App() {
           }
         })
     } else {
-        axios.get(`${process.env.DEV}/auth/user`, { headers: {
+        axios.get(`${process.env.REACT_APP_DEV}/auth/user`, { headers: {
           accessToken: localStorage.getItem("accessToken")
         },
       })
@@ -64,12 +64,12 @@ export default function App() {
     }
     
     if(process.env.NODE_ENV === 'production') {
-      axios.get(`${process.env.PROD}/auth/userInfo/${authState.id}`)
+      axios.get(`${process.env.REACT_APP_PROD}/auth/userInfo/${authState.id}`)
             .then ( (response) => {
                 setUserObj(response)
         })
     } else {
-      axios.get(`${process.env.DEV}/auth/userInfo/${authState.id}`)
+      axios.get(`${process.env.REACT_APP_DEV}/auth/userInfo/${authState.id}`)
             .then ( (response) => {
                 setUserObj(response)
         })

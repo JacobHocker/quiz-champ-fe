@@ -27,11 +27,11 @@ export default function AdminPostQuizzes() {
     
     const onSubmit = (data) => {
         if(process.env.NODE_ENV === 'production') {
-            axios.post(`${process.env.PROD}/quizzes`, data).then((response) => {
+            axios.post(`${process.env.REACT_APP_PROD}/quizzes`, data).then((response) => {
                 navigate('/quizzes')
             })
         } else {
-            axios.post(`${process.env.DEV}/quizzes`, data).then((response) => {
+            axios.post(`${process.env.REACT_APP_DEV}/quizzes`, data).then((response) => {
                 navigate('/quizzes')
             })
         }

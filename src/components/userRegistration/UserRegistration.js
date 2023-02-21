@@ -123,7 +123,7 @@ export default function UserRegistration({ setShowLogin }) {
     ]
     const registerUser = () => {
         if(process.env.NODE_ENV === 'production') {
-            axios.post(`${process.env.PROD}/auth`, {
+            axios.post(`${process.env.REACT_APP_PROD}/auth`, {
                 username: username,
                 password: password,
                 avatar: avatar,
@@ -136,7 +136,7 @@ export default function UserRegistration({ setShowLogin }) {
                 setShowLogin(true)
             })
         } else {
-            axios.post(`${process.env.DEV}/auth`, {
+            axios.post(`${process.env.REACT_APP_DEV}/auth`, {
                 username: username,
                 password: password,
                 avatar: avatar,

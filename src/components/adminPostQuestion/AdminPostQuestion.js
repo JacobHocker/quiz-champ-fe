@@ -17,7 +17,7 @@ export default function AdminPostQuestion() {
     
     const addQuestion = () => {
         if(process.env.NODE_ENV === 'production') {
-            axios.post(`${process.env.PROD}/questions`, {
+            axios.post(`${process.env.REACT_APP_PROD}/questions`, {
                 questionContent: questionContent,
                 questionImage: questionImage,
                 optionA: optionA,
@@ -29,7 +29,7 @@ export default function AdminPostQuestion() {
             })
             .then(() => { navigate("/quizzes")})
         } else {
-            axios.post(`${process.env.DEV}/questions`, {
+            axios.post(`${process.env.REACT_APP_DEV}/questions`, {
                 questionContent: questionContent,
                 questionImage: questionImage,
                 optionA: optionA,

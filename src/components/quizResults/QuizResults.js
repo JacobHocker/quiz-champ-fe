@@ -32,13 +32,13 @@ export default function QuizResults({  crownAmount, setCrownAmount }) {
 
         if (scoreArr.data.length === 0) {
             if(process.env.NODE_ENV === 'production') {
-                axios.put(`${process.env.PROD}/auth/crowns`, 
+                axios.put(`${process.env.REACT_APP_PROD}/auth/crowns`, 
                 {totalCrown: totalCrown, id: userId})
                 .then(() => {
                     navigate('/quizzes')
                 })
             } else {
-                axios.put(`${process.env.DEV}/auth/crowns`, 
+                axios.put(`${process.env.REACT_APP_DEV}/auth/crowns`, 
                 {totalCrown: totalCrown, id: userId})
                 .then(() => {
                     navigate('/quizzes')
@@ -47,13 +47,13 @@ export default function QuizResults({  crownAmount, setCrownAmount }) {
             
         } else if (scoreArr.data.length === 1) {
             if(process.env.NODE_ENV === 'production') {
-                axios.put(`${process.env.PROD}/auth/crowns`, 
+                axios.put(`${process.env.REACT_APP_PROD}/auth/crowns`, 
                 {totalCrown: totalCrownTwo, id: userId})
                 .then(() => {
                     navigate('/quizzes')
                 })
             } else {
-                axios.put(`${process.env.DEV}/auth/crowns`, 
+                axios.put(`${process.env.REACT_APP_DEV}/auth/crowns`, 
                 {totalCrown: totalCrownTwo, id: userId})
                 .then(() => {
                     navigate('/quizzes')

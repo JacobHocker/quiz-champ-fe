@@ -20,8 +20,14 @@ export default function UserProfileContainer() {
 
     
     useEffect(() => {
-        axios.get(`http://localhost:2000/auth/usernameInfo/${username}`)
-        .then((response) => { setPageUserInfo(response)})
+        if(process.env.NODE_ENV === 'production') {
+            axios.get(`${process.env.REACT_APP_PROD}/auth/usernameInfo/${username}`)
+            .then((response) => { setPageUserInfo(response)})
+        } else {
+            axios.get(`${process.env.REACT_APP_DEV}/auth/usernameInfo/${username}`)
+            .then((response) => { setPageUserInfo(response)})
+        }
+        
     }, [username])
 
 

@@ -26,21 +26,21 @@ export default function QuizDisplayContainer() {
 
     useEffect(() => {
         if(process.env.NODE_ENV === 'production') {
-            axios.get(`${process.env.PROD}/quizzes/${id}`).then((response) => {
+            axios.get(`${process.env.REACT_APP_PROD}/quizzes/${id}`).then((response) => {
                 setQuizObject(response.data)
             })
         } else {
-            axios.get(`${process.env.DEV}/quizzes/${id}`).then((response) => {
+            axios.get(`${process.env.REACT_APP_DEV}/quizzes/${id}`).then((response) => {
                 setQuizObject(response.data)
             })
         }
         
         if(process.env.NODE_ENV === 'production') {
-            axios.get(`${process.env.PROD}/questions/${id}`).then((response) => {
+            axios.get(`${process.env.REACT_APP_PROD}/questions/${id}`).then((response) => {
                 setQuestionList(response)
             })
         } else {
-            axios.get(`${process.env.DEV}/questions/${id}`).then((response) => {
+            axios.get(`${process.env.REACT_APP_DEV}/questions/${id}`).then((response) => {
                 setQuestionList(response)
             })
         }
@@ -50,11 +50,11 @@ export default function QuizDisplayContainer() {
 
     useEffect(() => {
         if(process.env.NODE_ENV === 'production') {
-            axios.get(`${process.env.PROD}/scores/${id}/${userId}`).then((response) => {
+            axios.get(`${process.env.REACT_APP_PROD}/scores/${id}/${userId}`).then((response) => {
                 setScoreArr(response)
             })
         } else {
-            axios.get(`${process.env.DEV}/scores/${id}/${userId}`).then((response) => {
+            axios.get(`${process.env.REACT_APP_DEV}/scores/${id}/${userId}`).then((response) => {
                 setScoreArr(response)
             })
         }

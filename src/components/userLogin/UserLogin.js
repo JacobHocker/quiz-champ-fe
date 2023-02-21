@@ -16,7 +16,7 @@ export default function UserLogin({ setShowLogin }) {
     const loginUser = () => {
         const data = { username: username, password: password }
         if(process.env.NODE_ENV === 'production') {
-            axios.post(`${process.env.PROD}/auth/login`, data).then((response) => {
+            axios.post(`${process.env.REACT_APP_PROD}/auth/login`, data).then((response) => {
                 if (response.data.error) {
                     alert(response.data.error)
                 } else {
@@ -30,7 +30,7 @@ export default function UserLogin({ setShowLogin }) {
                 }
             })
         } else {
-            axios.post(`${process.env.DEV}/auth/login`, data).then((response) => {
+            axios.post(`${process.env.REACT_APP_DEV}/auth/login`, data).then((response) => {
                 if (response.data.error) {
                     alert(response.data.error)
                 } else {

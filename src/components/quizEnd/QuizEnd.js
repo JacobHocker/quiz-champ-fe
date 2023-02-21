@@ -33,7 +33,7 @@ export default function QuizEnd({ questionList, quizId }) {
 
     const addScore = () => {
         if(process.env.NODE_ENV === 'production'){
-            axios.post(`${process.env.PROD}/scores`, {
+            axios.post(`${process.env.REACT_APP_PROD}/scores`, {
                 quizScore: quizScore,
                 crownAmount: crownAmount,
                 QuizId: quizId,
@@ -44,7 +44,7 @@ export default function QuizEnd({ questionList, quizId }) {
                 
             })
         } else {
-            axios.post(`${process.env.DEV}/scores`, {
+            axios.post(`${process.env.REACT_APP_DEV}/scores`, {
                 quizScore: quizScore,
                 crownAmount: crownAmount,
                 QuizId: quizId,

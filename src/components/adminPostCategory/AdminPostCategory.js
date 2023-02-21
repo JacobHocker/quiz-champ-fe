@@ -24,11 +24,11 @@ export default function AdminPostCategory() {
     
     const onSubmit = (data) => {
         if(process.env.NODE_ENV === 'production') {
-            axios.post(`${process.env.PROD}categories`, data).then((response) => {
+            axios.post(`${process.env.REACT_APP_PROD}/categories`, data).then((response) => {
                 navigate('/quizzes')
             })
         } else {
-            axios.post(`${process.env.DEV}categories`, data).then((response) => {
+            axios.post(`${process.env.REACT_APP_DEV}/categories`, data).then((response) => {
                 navigate('/quizzes')
             })
         }

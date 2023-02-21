@@ -18,12 +18,12 @@ export default function NavBarContainer() {
     }
     useEffect(() => {
         if (process.env.NODE_ENV === 'production') {
-            axios.get(`${process.env.PROD}/auth/userInfo/${userId}`)
+            axios.get(`${process.env.REACT_APP_PROD}/auth/userInfo/${userId}`)
             .then((response) => {
                 setUserInfo(response)
             })
         } else {
-            axios.get(`${process.env.DEV}/auth/userInfo/${userId}`)
+            axios.get(`${process.env.REACT_APP_DEV}/auth/userInfo/${userId}`)
             .then((response) => {
                 setUserInfo(response)
             })

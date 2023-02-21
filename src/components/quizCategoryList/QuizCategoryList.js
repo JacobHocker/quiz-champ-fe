@@ -11,10 +11,10 @@ export default function QuizCategoryList() {
 
     useEffect(() => {
         if(process.env.NODE_ENV === 'production') {
-            axios.get(`${process.env.PROD}/categories`)
+            axios.get(`${process.env.REACT_APP_PROD}/categories`)
             .then((response) => setCategoryList(response))
         } else {
-            axios.get(`${process.env.DEV}/categories`)
+            axios.get(`${process.env.REACT_APP_DEV}/categories`)
             .then((response) => setCategoryList(response))
         }
         
