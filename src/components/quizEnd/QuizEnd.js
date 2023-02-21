@@ -32,16 +32,30 @@ export default function QuizEnd({ questionList, quizId }) {
     }, [quizScore])
 
     const addScore = () => {
-        axios.post("http://localhost:2000/scores", {
-            quizScore: quizScore,
-            crownAmount: crownAmount,
-            QuizId: quizId,
-            UserId: userId
-        })
-        .then(() => { 
-            setShowResults(true) 
-            
-        })
+        if(process.env.NODE_ENV === 'production'){
+            axios.post(`${process.env.PROD}/scores`, {
+                quizScore: quizScore,
+                crownAmount: crownAmount,
+                QuizId: quizId,
+                UserId: userId
+            })
+            .then(() => { 
+                setShowResults(true) 
+                
+            })
+        } else {
+            axios.post(`${process.env.DEV}/scores`, {
+                quizScore: quizScore,
+                crownAmount: crownAmount,
+                QuizId: quizId,
+                UserId: userId
+            })
+            .then(() => { 
+                setShowResults(true) 
+                
+            })
+        }
+        
     }
     return (
         <div className='quiz-end-container'>

@@ -25,19 +25,40 @@ export default function QuizDisplayContainer() {
     
 
     useEffect(() => {
-        axios.get(`http://localhost:2000/quizzes/${id}`).then((response) => {
-            setQuizObject(response.data)
-        })
-        axios.get(`http://localhost:2000/questions/${id}`).then((response) => {
-            setQuestionList(response)
-        })
+        if(process.env.NODE_ENV === 'production') {
+            axios.get(`${process.env.PROD}/quizzes/${id}`).then((response) => {
+                setQuizObject(response.data)
+            })
+        } else {
+            axios.get(`${process.env.DEV}/quizzes/${id}`).then((response) => {
+                setQuizObject(response.data)
+            })
+        }
+        
+        if(process.env.NODE_ENV === 'production') {
+            axios.get(`${process.env.PROD}/questions/${id}`).then((response) => {
+                setQuestionList(response)
+            })
+        } else {
+            axios.get(`${process.env.DEV}/questions/${id}`).then((response) => {
+                setQuestionList(response)
+            })
+        }
+        
         
     },[id])
 
     useEffect(() => {
-        axios.get(`http://localhost:2000/scores/${id}/${userId}`).then((response) => {
-            setScoreArr(response)
-        })
+        if(process.env.NODE_ENV === 'production') {
+            axios.get(`${process.env.PROD}/scores/${id}/${userId}`).then((response) => {
+                setScoreArr(response)
+            })
+        } else {
+            axios.get(`${process.env.DEV}/scores/${id}/${userId}`).then((response) => {
+                setScoreArr(response)
+            })
+        }
+        
         
     }, [id, userId])
     

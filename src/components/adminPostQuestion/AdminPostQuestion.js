@@ -14,18 +14,34 @@ export default function AdminPostQuestion() {
     let [answer, setAnswer] = useState("");
     let [quizId, setQuizId] = useState(0);
     
+    
     const addQuestion = () => {
-        axios.post("http://localhost:2000/questions", {
-            questionContent: questionContent,
-            questionImage: questionImage,
-            optionA: optionA,
-            optionB: optionB,
-            optionC: optionC,
-            optionD: optionD,
-            answer: answer,
-            QuizId: quizId
-        })
-        .then(() => { navigate("/quizzes")})
+        if(process.env.NODE_ENV === 'production') {
+            axios.post(`${process.env.PROD}/questions`, {
+                questionContent: questionContent,
+                questionImage: questionImage,
+                optionA: optionA,
+                optionB: optionB,
+                optionC: optionC,
+                optionD: optionD,
+                answer: answer,
+                QuizId: quizId
+            })
+            .then(() => { navigate("/quizzes")})
+        } else {
+            axios.post(`${process.env.DEV}/questions`, {
+                questionContent: questionContent,
+                questionImage: questionImage,
+                optionA: optionA,
+                optionB: optionB,
+                optionC: optionC,
+                optionD: optionD,
+                answer: answer,
+                QuizId: quizId
+            })
+            .then(() => { navigate("/quizzes")})
+        }
+        
     }
     return (
         <div className='admin-post-container'>

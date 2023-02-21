@@ -24,10 +24,18 @@ export default function AdminPostQuizzes() {
         CatId:  Yup.number().required()
     })
 
+    
     const onSubmit = (data) => {
-        axios.post("http://localhost:2000/quizzes", data).then((response) => {
-            navigate('/quizzes')
-        })
+        if(process.env.NODE_ENV === 'production') {
+            axios.post(`${process.env.PROD}/quizzes`, data).then((response) => {
+                navigate('/quizzes')
+            })
+        } else {
+            axios.post(`${process.env.DEV}/quizzes`, data).then((response) => {
+                navigate('/quizzes')
+            })
+        }
+        
     }
     return (
         <div className='admin-post-container'>

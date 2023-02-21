@@ -11,8 +11,14 @@ export default function QuizListByCategory() {
     const { id } = useParams();
     
     useEffect(() => {
-        axios.get(`http://localhost:2000/quizzes/categories/${id}`)
-        .then((response) => { setQuizList(response)})
+        if(process.env.NODE_ENV === 'production') {
+            axios.get(`${process.env.PROD}/quizzes/categories/${id}`)
+            .then((response) => { setQuizList(response)})
+        } else {
+            axios.get(`${process.env.DEV}/quizzes/categories/${id}`)
+            .then((response) => { setQuizList(response)})
+        }
+        
     }, [])
 
     

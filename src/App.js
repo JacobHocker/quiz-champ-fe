@@ -27,26 +27,54 @@ export default function App() {
   const [userObj, setUserObj] = useState({});
 
   useEffect(() => {
-    axios.get("http://localhost:2000/auth/user", { headers: {
-      accessToken: localStorage.getItem("accessToken")
-    },
-  })
-  .then((response) => {
-      if (response.data.error) {
-        setAuthState({ ...authState, status: false })
-      } else {
-        setAuthState({
-          username: response.data.username,
-          id: response.data.id,
-          status: true,
+    if (process.env.NODE_ENV === 'production') {
+        axios.get(`${process.env.PROD}/auth/user`, { headers: {
+          accessToken: localStorage.getItem("accessToken")
+        },
+      })
+      .then((response) => {
+          if (response.data.error) {
+            setAuthState({ ...authState, status: false })
+          } else {
+            setAuthState({
+              username: response.data.username,
+              id: response.data.id,
+              status: true,
+            })
+            
+          }
         })
-        
-      }
-    })
-    axios.get(`http://localhost:2000/auth/userInfo/${authState.id}`)
+    } else {
+        axios.get(`${process.env.DEV}/auth/user`, { headers: {
+          accessToken: localStorage.getItem("accessToken")
+        },
+      })
+      .then((response) => {
+          if (response.data.error) {
+            setAuthState({ ...authState, status: false })
+          } else {
+            setAuthState({
+              username: response.data.username,
+              id: response.data.id,
+              status: true,
+            })
+            
+          }
+        })
+    }
+    
+    if(process.env.NODE_ENV === 'production') {
+      axios.get(`${process.env.PROD}/auth/userInfo/${authState.id}`)
             .then ( (response) => {
                 setUserObj(response)
         })
+    } else {
+      axios.get(`${process.env.DEV}/auth/userInfo/${authState.id}`)
+            .then ( (response) => {
+                setUserObj(response)
+        })
+    }
+    
   }, [authState, authState.id, userObj])
 
   const userId = authState.id;

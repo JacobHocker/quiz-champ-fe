@@ -122,19 +122,36 @@ export default function UserRegistration({ setShowLogin }) {
     }
     ]
     const registerUser = () => {
-        axios.post("http://localhost:2000/auth", {
-            username: username,
-            password: password,
-            avatar: avatar,
-            bio: bio,
-            country: country,
-            totalCrown: totalCrown
-        })
-        .then(() => { 
-            setTotalCrown(0)
-            setShowLogin(true)
-        })
+        if(process.env.NODE_ENV === 'production') {
+            axios.post(`${process.env.PROD}/auth`, {
+                username: username,
+                password: password,
+                avatar: avatar,
+                bio: bio,
+                country: country,
+                totalCrown: totalCrown
+            })
+            .then(() => { 
+                setTotalCrown(0)
+                setShowLogin(true)
+            })
+        } else {
+            axios.post(`${process.env.DEV}/auth`, {
+                username: username,
+                password: password,
+                avatar: avatar,
+                bio: bio,
+                country: country,
+                totalCrown: totalCrown
+            })
+            .then(() => { 
+                setTotalCrown(0)
+                setShowLogin(true)
+            })
+        }
+        
     }
+    
     
     return (
             <div className='auth-container'>

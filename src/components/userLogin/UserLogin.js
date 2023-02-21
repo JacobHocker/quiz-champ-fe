@@ -15,19 +15,36 @@ export default function UserLogin({ setShowLogin }) {
 
     const loginUser = () => {
         const data = { username: username, password: password }
-        axios.post("http://localhost:2000/auth/login", data).then((response) => {
-            if (response.data.error) {
-                alert(response.data.error)
-            } else {
-                localStorage.setItem("accessToken", response.data.token);
-                setAuthState({ 
-                    username: response.data.username, 
-                    id: response.data.id, 
-                    status: true
-                });
-                navigate("/");
-            }
-        })
+        if(process.env.NODE_ENV === 'production') {
+            axios.post(`${process.env.PROD}/auth/login`, data).then((response) => {
+                if (response.data.error) {
+                    alert(response.data.error)
+                } else {
+                    localStorage.setItem("accessToken", response.data.token);
+                    setAuthState({ 
+                        username: response.data.username, 
+                        id: response.data.id, 
+                        status: true
+                    });
+                    navigate("/");
+                }
+            })
+        } else {
+            axios.post(`${process.env.DEV}/auth/login`, data).then((response) => {
+                if (response.data.error) {
+                    alert(response.data.error)
+                } else {
+                    localStorage.setItem("accessToken", response.data.token);
+                    setAuthState({ 
+                        username: response.data.username, 
+                        id: response.data.id, 
+                        status: true
+                    });
+                    navigate("/");
+                }
+            })
+        }
+        
         
     }
     return (

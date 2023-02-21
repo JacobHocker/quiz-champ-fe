@@ -10,8 +10,14 @@ export default function QuizCategoryList() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get("http://localhost:2000/categories")
-        .then((response) => setCategoryList(response))
+        if(process.env.NODE_ENV === 'production') {
+            axios.get(`${process.env.PROD}/categories`)
+            .then((response) => setCategoryList(response))
+        } else {
+            axios.get(`${process.env.DEV}/categories`)
+            .then((response) => setCategoryList(response))
+        }
+        
     }, [])
 
     

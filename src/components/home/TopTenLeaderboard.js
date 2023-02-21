@@ -17,8 +17,14 @@ export default function TopTenLeaderboard() {
     const [leaderboardList, setLeaderboardList] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:2000/auth/crown-leaders')
-        .then((response) => setLeaderboardList(response.data))
+        if (process.env.NODE_ENV === 'production') {
+            axios.get(`${process.env.PROD}/auth/crown-leaders`)
+            .then((response) => setLeaderboardList(response.data))
+        } else {
+            axios.get(`${process.env.DEV}/auth/crown-leaders`)
+            .then((response) => setLeaderboardList(response.data))
+        }
+        
 
     }, [])
 

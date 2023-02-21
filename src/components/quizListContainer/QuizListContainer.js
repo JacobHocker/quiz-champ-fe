@@ -9,9 +9,16 @@ export default function QuizListContainer() {
     
     let navigate = useNavigate();
     useEffect(() => {
-        axios.get("http://localhost:2000/quizzes").then((response) => {
-            setQuizListDisplay(response)
-        })
+        if(process.env.NODE_ENV === 'production') {
+            axios.get(`${process.env.PROD}/quizzes`).then((response) => {
+                setQuizListDisplay(response)
+            })
+        } else {
+            axios.get(`${process.env.DEV}/quizzes`).then((response) => {
+                setQuizListDisplay(response)
+            })
+        }
+        
     }, [])
     
     const toQuizRules = () => {

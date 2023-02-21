@@ -17,10 +17,18 @@ export default function NavBarContainer() {
         navigate(`/profile/${username}`)
     }
     useEffect(() => {
-        axios.get(`http://localhost:2000/auth/userInfo/${userId}`)
-        .then((response) => {
-            setUserInfo(response)
-        })
+        if (process.env.NODE_ENV === 'production') {
+            axios.get(`${process.env.PROD}/auth/userInfo/${userId}`)
+            .then((response) => {
+                setUserInfo(response)
+            })
+        } else {
+            axios.get(`${process.env.DEV}/auth/userInfo/${userId}`)
+            .then((response) => {
+                setUserInfo(response)
+            })
+        }
+        
     }, [userId])
 
     const logout = () => {

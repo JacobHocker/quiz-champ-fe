@@ -21,10 +21,18 @@ export default function AdminPostCategory() {
         catImage: Yup.string().required("Category must have image"),
     })
 
+    
     const onSubmit = (data) => {
-        axios.post("http://localhost:2000/categories", data).then((response) => {
-            navigate('/quizzes')
-        })
+        if(process.env.NODE_ENV === 'production') {
+            axios.post(`${process.env.PROD}categories`, data).then((response) => {
+                navigate('/quizzes')
+            })
+        } else {
+            axios.post(`${process.env.DEV}categories`, data).then((response) => {
+                navigate('/quizzes')
+            })
+        }
+        
     }
     return (
         <div className='admin-post-container'>
