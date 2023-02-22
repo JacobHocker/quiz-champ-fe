@@ -13,8 +13,23 @@ export default function NavBarContainer() {
 
     let navigate = useNavigate();
 
+    const toHome = () => {
+        navigate('/');
+    }
+    const toSearch = () => {
+        navigate('/search');
+    }
+    const toRules = () => {
+        navigate('/rules-rewards-info');
+    }
+    const toAdmin = () => {
+        navigate('/admin');
+    }
     const toProfile = () => {
-        navigate(`/profile/${username}`)
+        navigate(`/profile/${username}`);
+    }
+    const toQuizzes = () => {
+        navigate('/quizzes');
     }
     useEffect(() => {
         if (process.env.NODE_ENV === 'production') {
@@ -39,7 +54,7 @@ export default function NavBarContainer() {
     return (
         <Navbar collapseOnSelect className='nav-container' expand="md" >
             <Container>
-                <Navbar.Brand href='/'>
+                <Navbar.Brand onClick={toHome}>
                     <img src={navLogo} alt='nav-logo' className='nav-logo' />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" className='nav-toggle'/>
@@ -47,19 +62,19 @@ export default function NavBarContainer() {
                     <div className='nav-list'>
                         <Nav className="me-auto">
                             <NavDropdown title='Quizzes' id="basic-nav-dropdown" className='nav-link'>
-                                <NavDropdown.Item href="/quizzes">
+                                <NavDropdown.Item onClick={toQuizzes}>
                                     Quizzes
                                 </NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href="/search">
+                                <NavDropdown.Item onClick={toSearch}>
                                     Search
                                 </NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href="/categories">
+                                <NavDropdown.Item onClick={toCategories}>
                                     Categories
                                 </NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href="/rules-rewards-info">
+                                <NavDropdown.Item onClick={toRules}>
                                     Rules & Rewards
                                 </NavDropdown.Item>
                             </NavDropdown>
@@ -72,7 +87,7 @@ export default function NavBarContainer() {
                                     Leaderboard
                                 </NavDropdown.Item>
                             </NavDropdown>
-                            <Nav.Link href='/admin'>
+                            <Nav.Link onClick={toAdmin}>
                                 <h2 className='nav-link'>Admin</h2>
                             </Nav.Link>
                         
