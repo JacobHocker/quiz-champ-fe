@@ -75,7 +75,7 @@ export default function App() {
         })
     }
     
-  }, [authState, authState.id, userObj])
+  }, [authState, authState.id])
 
   const userId = authState.id;
   const username = authState.username;
