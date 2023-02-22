@@ -25,6 +25,9 @@
     @include large {
         width: 6.5rem;
     }
+    &:hover{
+        cursor: pointer;
+    }
 }
 // NAV LIST
 .me-auto{
