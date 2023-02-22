@@ -8,4 +8,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 2rem;
+}
+.quiz-cat-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+.quiz-cat-body p {
+    font-size: 0.75rem;
+    font-family: styles.$header-text;
 }

@@ -17,11 +17,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    @include medium{
-        width: 90%;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
+    // @include medium{
+    //     width: 90%;
+    //     display: grid;
+    //     grid-template-columns: 50% 50%;
+    // }
 }
 // QUIZ MENU IMAGE
 .quiz-display-image{
@@ -114,6 +114,7 @@
 }
 .start-quiz-container h1{
     font-family: styles.$special-text;
+    margin-bottom: 1.5rem;
     font-size: 1.25rem;
     @include medium{
         font-size: 1.65rem;
@@ -135,13 +136,7 @@
         font-size: 2.25rem
     }
 }
-.quiz-display-info h2{
-    font-family: styles.$header-text;
-    font-size: 1.5rem;
-    @include medium{
-        font-size: 1.75rem
-    }
-}
+
 .quiz-display-info p{
     font-family: styles.$general-text;
     font-size: 1rem;
@@ -150,4 +145,38 @@
         font-size: 1.25rem;
     }
 
+}
+//QUIZ DISPLAY DIFFICULTY
+.quiz-display-diff{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+.quiz-display-diff-title h2{
+    font-family: styles.$header-text;
+    font-size: 1.5rem;
+    @include medium{
+        font-size: 1.75rem
+    }
+}
+.dis-easy-star{
+    color: limegreen;
+    font-size: 1.25rem;
+    @include medium {
+        font-size: 1.5rem;
+    }
+}
+.dis-medium-star{
+    color: gold;
+    font-size: 1.25rem;
+    @include medium {
+        font-size: 1.5rem;
+    }
+}
+.dis-hard-star{
+    color: #8b0000;
+    font-size: 1.25rem;
+    @include medium {
+        font-size: 1.5rem;
+    }
 }

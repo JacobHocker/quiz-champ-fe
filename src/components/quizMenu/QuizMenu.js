@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import './QuizMenu.scss'
+import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 import { QuizContext } from '../../Helpers/Contexts';
 import { AuthContext } from '../../Helpers/AuthContext';
 
@@ -74,7 +75,42 @@ export default function QuizMenu({ quizObject, scoreArr }) {
             </div>
             <div className='quiz-display-info'>
                 <h1>About</h1>
-                <h2>Difficulty: {quizObject.quizDifficulty}</h2>
+                <div className='quiz-display-diff'>
+                    <div className='quiz-display-diff-title'>
+                        <h2>Difficulty:</h2>
+                    </div>
+                    {
+                        quizObject.quizDifficulty === "Easy" ?
+                        <div className='star-container'>
+                            <BsStarFill className='dis-easy-star'/>
+                            <BsStar className='dis-easy-star'/>
+                            <BsStar className='dis-easy-star'/>
+                            <BsStar className='dis-easy-star'/>
+                            <BsStar className='dis-easy-star'/>
+                        </div>
+                        :
+                        quizObject.quizDifficulty === "Medium" ?
+                        <div className='star-container'>
+                            <BsStarFill className='dis-medium-star'/>
+                            <BsStarFill className='dis-medium-star'/>
+                            <BsStarHalf className='dis-medium-star'/>
+                            <BsStar className='dis-medium-star'/>
+                            <BsStar className='dis-medium-star'/>
+                        </div>
+                        :
+                        quizObject.quizDifficulty === "Hard" ?
+                        <div className='star-container'>
+                            <BsStarFill className='dis-hard-star'/>
+                            <BsStarFill className='dis-hard-star'/>
+                            <BsStarFill className='dis-hard-star'/>
+                            <BsStarFill className='dis-hard-star'/>
+                            <BsStarFill className='dis-hard-star'/>
+                        </div>
+                        :
+                        <div></div>
+                    }
+                </div>
+                
                 <p> {quizObject.quizDescription}</p>
             </div> 
             

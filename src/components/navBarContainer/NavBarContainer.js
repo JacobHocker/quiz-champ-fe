@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext }from 'react';
+import React, { useContext }from 'react';
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
@@ -8,8 +8,8 @@ import axios from 'axios';
 import navLogo from '../../assets/images/quiz-champ-sm.png';
 
 export default function NavBarContainer() {
-    const { userId, setAuthState, username } = useContext(AuthContext);
-    const [userInfo, setUserInfo] = useState({});
+    const { userId, setAuthState, username, userObj } = useContext(AuthContext);
+    //const [userInfo, setUserInfo] = useState({});
 
     let navigate = useNavigate();
 
@@ -34,20 +34,20 @@ export default function NavBarContainer() {
     const toQuizzes = () => {
         navigate('/quizzes');
     }
-    useEffect(() => {
-        if (process.env.NODE_ENV === 'production') {
-            axios.get(`${process.env.REACT_APP_PROD}/auth/userInfo/${userId}`)
-            .then((response) => {
-                setUserInfo(response)
-            })
-        } else {
-            axios.get(`${process.env.REACT_APP_DEV}/auth/userInfo/${userId}`)
-            .then((response) => {
-                setUserInfo(response)
-            })
-        }
+    // useEffect(() => {
+    //     if (process.env.NODE_ENV === 'production') {
+    //         axios.get(`${process.env.REACT_APP_PROD}/auth/userInfo/${userId}`)
+    //         .then((response) => {
+    //             setUserInfo(response)
+    //         })
+    //     } else {
+    //         axios.get(`${process.env.REACT_APP_DEV}/auth/userInfo/${userId}`)
+    //         .then((response) => {
+    //             setUserInfo(response)
+    //         })
+    //     }
         
-    }, [userId])
+    // }, [userId])
 
     const logout = () => {
         localStorage.removeItem("accessToken")
@@ -94,8 +94,8 @@ export default function NavBarContainer() {
                                 <h2 className='nav-link'>Admin</h2>
                             </Nav.Link>
                         
-                                {userInfo.data && 
-                                    <img src={userInfo.data.avatar} className='nav-avatar' alt={userInfo.data.username}  onClick={toProfile}/>
+                                {userObj.data && 
+                                    <img src={userObj.data.avatar} className='nav-avatar' alt={userObj.data.username}  onClick={toProfile}/>
                                 }
                             
                             <button onClick={logout} className='nav-btn'>Logout</button>

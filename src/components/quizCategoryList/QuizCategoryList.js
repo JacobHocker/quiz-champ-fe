@@ -36,8 +36,8 @@ export default function QuizCategoryList() {
                         <div className='quiz-card-header'>
                             <h1>{val.catName}</h1>
                         </div>
-                        <div className='quiz-card-body'>
-                            <h2>{val.catDescription}</h2>
+                        <div className='quiz-cat-body'>
+                            <p>{val.catDescription}</p>
                         </div>
                     </div>
                 ))}
