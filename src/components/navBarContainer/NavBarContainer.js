@@ -16,6 +16,9 @@ export default function NavBarContainer() {
     const toHome = () => {
         navigate('/');
     }
+    const toCategories = () => {
+        navigate('/categories')
+    }
     const toSearch = () => {
         navigate('/search');
     }
