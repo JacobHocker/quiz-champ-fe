@@ -1,15 +1,17 @@
-import React, { useContext }from 'react';
+import React, { useContext, useState }from 'react';
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
+import { GiHamburgerMenu } from 'react-icons/gi';
 import './NavBarContainer.scss';
 import {AuthContext} from '../../Helpers/AuthContext';
 import axios from 'axios';
 import navLogo from '../../assets/images/quiz-champ-sm.png';
 
 export default function NavBarContainer() {
+    const [expanded, setExpanded] = useState(false);
     const { userId, setAuthState, username, userObj } = useContext(AuthContext);
-    //const [userInfo, setUserInfo] = useState({});
+    
 
     let navigate = useNavigate();
 
@@ -17,37 +19,30 @@ export default function NavBarContainer() {
         navigate('/');
     }
     const toCategories = () => {
-        navigate('/categories')
+        navigate('/categories');
+        setExpanded(!expanded);
     }
     const toSearch = () => {
         navigate('/search');
+        setExpanded(!expanded);
     }
     const toRules = () => {
         navigate('/rules-rewards-info');
+        setExpanded(!expanded);
     }
     const toAdmin = () => {
         navigate('/admin');
+        setExpanded(!expanded);
     }
     const toProfile = () => {
         navigate(`/profile/${username}`);
+        setExpanded(!expanded);
     }
     const toQuizzes = () => {
         navigate('/quizzes');
+        setExpanded(!expanded);
     }
-    // useEffect(() => {
-    //     if (process.env.NODE_ENV === 'production') {
-    //         axios.get(`${process.env.REACT_APP_PROD}/auth/userInfo/${userId}`)
-    //         .then((response) => {
-    //             setUserInfo(response)
-    //         })
-    //     } else {
-    //         axios.get(`${process.env.REACT_APP_DEV}/auth/userInfo/${userId}`)
-    //         .then((response) => {
-    //             setUserInfo(response)
-    //         })
-    //     }
-        
-    // }, [userId])
+    
 
     const logout = () => {
         localStorage.removeItem("accessToken")
@@ -55,26 +50,27 @@ export default function NavBarContainer() {
     };
 
     return (
-        <Navbar collapseOnSelect className='nav-container' expand="md" >
+        <Navbar expanded={expanded} collapseOnSelect className='nav-container' expand="md" >
             <Container>
                 <Navbar.Brand onClick={toHome}>
                     <img src={navLogo} alt='nav-logo' className='nav-logo' />
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" className='nav-toggle'/>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" className='nav-toggle'  
+                onClick={() => {setExpanded(!expanded)}}> <GiHamburgerMenu className='nav-ham'/></Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <div className='nav-list'>
                         <Nav className="me-auto">
                             <NavDropdown title='Quizzes' id="basic-nav-dropdown" className='nav-link'>
-                                <NavDropdown.Item onClick={toQuizzes}>
-                                    Quizzes
-                                </NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item onClick={toSearch}>
+                            <NavDropdown.Item onClick={toSearch}>
                                     Search
                                 </NavDropdown.Item>
                                 <NavDropdown.Divider />
+                                <NavDropdown.Item onClick={toQuizzes}>
+                                    All Quizzes
+                                </NavDropdown.Item>
+                                <NavDropdown.Divider />
                                 <NavDropdown.Item onClick={toCategories}>
-                                    Categories
+                                    Quiz By Category
                                 </NavDropdown.Item>
                                 <NavDropdown.Divider />
                                 <NavDropdown.Item onClick={toRules}>

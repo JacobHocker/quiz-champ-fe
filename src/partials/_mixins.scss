@@ -2,12 +2,24 @@
     @media (min-width: 600px) { @content; }
 }
 
-@mixin nav-medium {
+@mixin nav-medium-s {
     @media (min-width: 765px) { @content; }
+}
+
+@mixin nav-medium-m {
+    @media (min-width: 819px) { @content; }
 }
 
 @mixin large {
     @media (min-width: 900px) { @content; }
+}
+
+@mixin nav-large{
+    @media (min-width: 992px) { @content;}
+}
+
+@mixin nav-large-l{
+    @media (min-width: 1050px) { @content;}
 }
 
 @mixin x-large {
