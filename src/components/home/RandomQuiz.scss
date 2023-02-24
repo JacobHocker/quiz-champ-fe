@@ -1,0 +1,55 @@
+@use '../../partials/colors';
+@use '../../partials/styles';
+@import '../../partials/mixins';
+
+//RANDOM QUIZ CONTAINER 
+.random-quiz-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: colors.$purple-secondary-op;
+    margin-top: 4rem;
+    
+    @include medium {
+        width: 90%;
+        border-radius: 10px;
+    }
+    @include large {
+        width: 80%;
+    }
+}
+//RANDOM QUIZ HEADER
+.random-quiz-header{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    
+}
+.random-quiz-header h1{
+    font-family: styles.$special-text;
+    font-size: 1.75rem;
+    @include medium {
+        font-size: 2rem;
+    }
+    @include large {
+        font-size: 2.25rem;
+    }
+}
+.random-quiz-header p{
+    font-family: styles.$header-text;
+    font-size: 1rem;
+    @include medium {
+        font-size: 1.15rem;
+    }
+}
+
+//RANDOM QUIZ BODY
+.random-quiz-body{
+    margin-bottom: 1.5rem;
+}

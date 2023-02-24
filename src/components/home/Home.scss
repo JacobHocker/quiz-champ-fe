@@ -26,3 +26,30 @@
         width: 35rem;
     }
 }
+//LTP HOME CONTAINER
+.ltp-home-container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    background-color: colors.$purple-secondary-op;
+    padding: 1rem;
+    
+    @include medium {
+        width: 80%;
+        border-radius: 10px;
+    }
+}
+.ltp-home-container h1{
+    font-family: styles.$special-text;
+    font-size: 1.45rem;
+    margin-bottom: 1rem;
+    @include medium {
+        font-size: 2rem;
+    }
+    @include large {
+        font-size: 2.5rem;
+    }
+}

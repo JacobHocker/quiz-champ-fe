@@ -39,3 +39,12 @@
 .top-ten-crown{
     width: 3rem;
 }
+
+// USER LINK
+.user-link{
+    transition: 0.15s ease-in;
+    &:hover{
+        cursor: pointer;
+        color: colors.$blue-accent;
+    }
+}

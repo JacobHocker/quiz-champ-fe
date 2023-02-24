@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
 import './TopTenLeaderboard.scss';
 import axios from 'axios';
 import bronzeCrown from '../../assets/images/bronzeCrown.png';
@@ -27,6 +28,8 @@ export default function TopTenLeaderboard() {
         
 
     }, [])
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         const leaderboard = leaderboardList.sort(({totalCrown:a}, {totalCrown:b }) => b-a)
@@ -62,7 +65,7 @@ export default function TopTenLeaderboard() {
                         leaderboardList.map((val, index) => (
                             <tr key={val.id} className='top-ten-data'>
                                 <td>{index + 1}</td>
-                                <td>{val.username}</td>
+                                <td className='user-link' onClick={() => {navigate(`/profile/${val.username}`)}}>{val.username}</td>
                                 {val.totalCrown >= 25 && val.totalCrown < 50 ?
                                 <td><img src={bronzeCrown} className='top-ten-crown' alt='bronzeCrown' /></td>
                                 :
