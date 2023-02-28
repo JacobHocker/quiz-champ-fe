@@ -1,3 +1,109 @@
 @use '../../partials/colors';
 @use '../../partials/styles';
 @import '../../partials/mixins';
+
+// QUIZ SEARCH CONTAINER 
+.quiz-search-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+// QUIZ SEARCH HEADER
+.quiz-search-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quiz-search-header h1{
+    font-family: styles.$special-text;
+    font-size: 2.5rem;
+}
+//SEARCH CONTAINER 
+.search-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    padding-bottom: 2rem;
+    border-bottom: 1.5px solid colors.$blue-accent;
+    width: 90%;
+}
+// SELECT SEARCH
+.select-search-area{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    width: 100%;
+}
+.select-search-area label{
+    font-family: styles.$header-text;
+    font-size: 1.5rem;
+}
+.search-select{
+    font-size: 1.25rem;
+    color: colors.$text-lt;
+    font-family: styles.$general-text;
+    background-color: transparent;
+    margin-bottom: 1rem;
+    border: 2px solid colors.$purple-secondary;
+    text-align: center;
+    color: colors.$text-placeholder;
+    padding: 0.15rem 0.25rem;
+    transition: 0.25s ease-in-out;
+    &:focus{
+        outline: none;
+    }
+    &:hover{
+        cursor: pointer;
+        border: 2px solid colors.$white;
+    }
+}
+// SEARCH BAR
+.search-bar-area{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search-bar{
+    width: 90%;
+    font-size: 1.25rem;
+    font-family: styles.$general-text;
+    color: colors.$white;
+    padding: 0.5rem;
+    background-color: transparent;
+    border: 2px solid colors.$purple-secondary-var;
+    text-align: center;
+    border-radius: 2px;
+    resize: none;
+    transition: 0.25s ease-in-out;
+    &::placeholder{
+        font-family: styles.$general-text;
+        color: colors.$text-placeholder
+    }
+    &:hover{
+        cursor: text;
+        border: 2px solid colors.$white;
+    }
+    &:focus{
+        outline: none;
+    }
+}
+//EMPTY SEARCH
+.empty-search{
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    @include medium {
+        width: 100%;
+    }
+}
+.empty-search h1{
+    font-family: styles.$header-text;
+    font-size: 1.75rem;
+}

@@ -6,6 +6,7 @@ import UserRegistration from './components/userRegistration/UserRegistration';
 import UserLogin from './components/userLogin/UserLogin';
 import UserAuthContainer from './components/userAuthContainer/UserAuthContainer';
 import AdminContainer from './components/adminContainer/AdminContainer';
+import QuizSearchContainer from './components/quizSearchContainer/QuizSearchContainer';
 import Home from './components/home/Home';
 import NavBarContainer from './components/navBarContainer/NavBarContainer';
 import QuizListContainer from './components/quizListContainer/QuizListContainer';
@@ -90,6 +91,7 @@ export default function App() {
           <NavBarContainer />
           <Routes>
             <Route element={<Home />} path='/' />
+            <Route element={<QuizSearchContainer />} path='/search' />
             <Route element={<QuizCategoryList />} path='categories' />
             <Route element={<QuizListByCategory />} path='category/:id' />
             <Route element={<QuizListContainer />} path='quizzes' />

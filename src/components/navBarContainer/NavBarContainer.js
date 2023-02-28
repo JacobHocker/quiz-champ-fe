@@ -62,7 +62,7 @@ export default function NavBarContainer() {
                         <Nav className="me-auto">
                             <NavDropdown title='Quizzes' id="basic-nav-dropdown" className='nav-link'>
                             <NavDropdown.Item onClick={toSearch}>
-                                    Search
+                                    Find A Quiz
                                 </NavDropdown.Item>
                                 <NavDropdown.Divider />
                                 <NavDropdown.Item onClick={toQuizzes}>
