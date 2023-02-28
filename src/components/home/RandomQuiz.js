@@ -39,52 +39,50 @@ export default function RandomQuiz() {
                 <p>Well take a look at the random quiz we have generated for you and test your knowledge!</p>
             </div>
             <div className='random-quiz-body'>
-                { randomQuiz.data && 
-                    <div className='quiz-list-card'
-                onClick={() => {navigate(`/quiz/${randomQuiz.id}`)}}>
-                    <div className='quiz-thumbnail-container'>
-                        <img src={randomQuiz.quizImage} alt={randomQuiz.quizName} className='quiz-card-thumb' />
+                <div className='quiz-list-card'
+            onClick={() => {navigate(`/quiz/${randomQuiz.id}`)}}>
+                <div className='quiz-thumbnail-container'>
+                    <img src={randomQuiz.quizImage} alt={randomQuiz.quizName} className='quiz-card-thumb' />
+                </div>
+                <div className='quiz-card-header'>
+                    <h1>{randomQuiz.quizName}</h1>
+                </div>
+                <div className='quiz-card-body'>
+                    <div className='difficulty-display'>
+                        <h2>Difficulty:</h2>
                     </div>
-                    <div className='quiz-card-header'>
-                        <h1>{randomQuiz.quizName}</h1>
-                    </div>
-                    <div className='quiz-card-body'>
-                        <div className='difficulty-display'>
-                            <h2>Difficulty:</h2>
+                    {
+                        randomQuiz.quizDifficulty === "Easy" ?
+                        <div className='star-container'>
+                            <BsStarFill className='easy-star'/>
+                            <BsStar className='easy-star'/>
+                            <BsStar className='easy-star'/>
+                            <BsStar className='easy-star'/>
+                            <BsStar className='easy-star'/>
                         </div>
-                        {
-                            randomQuiz.quizDifficulty === "Easy" ?
-                            <div className='star-container'>
-                                <BsStarFill className='easy-star'/>
-                                <BsStar className='easy-star'/>
-                                <BsStar className='easy-star'/>
-                                <BsStar className='easy-star'/>
-                                <BsStar className='easy-star'/>
-                            </div>
-                            :
-                            randomQuiz.quizDifficulty === "Medium" ?
-                            <div className='star-container'>
-                                <BsStarFill className='medium-star'/>
-                                <BsStarFill className='medium-star'/>
-                                <BsStarHalf className='medium-star'/>
-                                <BsStar className='medium-star'/>
-                                <BsStar className='medium-star'/>
-                            </div>
-                            :
-                            randomQuiz.quizDifficulty === "Hard" ?
-                            <div className='star-container'>
-                                <BsStarFill className='hard-star'/>
-                                <BsStarFill className='hard-star'/>
-                                <BsStarFill className='hard-star'/>
-                                <BsStarFill className='hard-star'/>
-                                <BsStarFill className='hard-star'/>
-                            </div>
-                            :
-                            <div></div>
-                        }
-                    </div>
-                    </div>
-                }
+                        :
+                        randomQuiz.quizDifficulty === "Medium" ?
+                        <div className='star-container'>
+                            <BsStarFill className='medium-star'/>
+                            <BsStarFill className='medium-star'/>
+                            <BsStarHalf className='medium-star'/>
+                            <BsStar className='medium-star'/>
+                            <BsStar className='medium-star'/>
+                        </div>
+                        :
+                        randomQuiz.quizDifficulty === "Hard" ?
+                        <div className='star-container'>
+                            <BsStarFill className='hard-star'/>
+                            <BsStarFill className='hard-star'/>
+                            <BsStarFill className='hard-star'/>
+                            <BsStarFill className='hard-star'/>
+                            <BsStarFill className='hard-star'/>
+                        </div>
+                        :
+                        <div></div>
+                    }
+                </div>
+                </div>
             </div>
         </section>
     )
