@@ -19,6 +19,10 @@
 .quiz-search-header h1{
     font-family: styles.$special-text;
     font-size: 2.5rem;
+    @include large {
+        font-size: 2.75rem;
+    }
+    
 }
 //SEARCH CONTAINER 
 .search-container{
@@ -41,6 +45,12 @@
 .select-search-area label{
     font-family: styles.$header-text;
     font-size: 1.5rem;
+    @include medium {
+        font-size: 1.7rem;
+    }
+    @include large {
+        font-size: 2rem;
+    }
 }
 .search-select{
     font-size: 1.25rem;
@@ -53,6 +63,12 @@
     color: colors.$text-placeholder;
     padding: 0.15rem 0.25rem;
     transition: 0.25s ease-in-out;
+    @include medium {
+        font-size: 1.5rem;
+    }
+    @include large {
+        font-size: 1.75rem;
+    }
     &:focus{
         outline: none;
     }
@@ -80,6 +96,12 @@
     border-radius: 2px;
     resize: none;
     transition: 0.25s ease-in-out;
+    @include medium {
+        font-size: 1.5rem;
+    }
+    @include large {
+        font-size: 1.75rem;
+    }
     &::placeholder{
         font-family: styles.$general-text;
         color: colors.$text-placeholder
@@ -106,4 +128,25 @@
 .empty-search h1{
     font-family: styles.$header-text;
     font-size: 1.75rem;
+    @include large {
+        font-size: 2rem;
+    }
+}
+// NOT FOUND SEARCH
+.not-found-search{
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    @include medium {
+        width: 100%;
+    }
+}
+.not-found-search h1{
+    font-family: styles.$header-text;
+    font-size: 1.75rem;
+    @include large {
+        font-size: 2rem;
+    }
 }

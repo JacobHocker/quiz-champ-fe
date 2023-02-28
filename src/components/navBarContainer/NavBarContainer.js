@@ -42,6 +42,10 @@ export default function NavBarContainer() {
         navigate('/quizzes');
         setExpanded(!expanded);
     }
+    const toForum = () => {
+        navigate('/forum');
+        setExpanded(!expanded);
+    }
     
 
     const logout = () => {
@@ -78,7 +82,7 @@ export default function NavBarContainer() {
                                 </NavDropdown.Item>
                             </NavDropdown>
                             <NavDropdown title='Community' id="basic-nav-dropdown" className='nav-link'>
-                                <NavDropdown.Item href="#action/3.1">
+                                <NavDropdown.Item onClick={toForum}>
                                     Forum
                                 </NavDropdown.Item>
                                 <NavDropdown.Divider />

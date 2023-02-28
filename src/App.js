@@ -15,6 +15,7 @@ import QuizRuleContainer from './components/quizRuleContainer/QuizRuleContainer'
 import UserProfileContainer from './components/userProfileContainer/UserProfileContainer';
 import QuizCategoryList from './components/quizCategoryList/QuizCategoryList';
 import QuizListByCategory from './components/quizListByCategory/QuizListByCategory';
+import ForumContainer from './components/forumContainer/ForumContainer';
 
 export default function App() {
 
@@ -27,6 +28,8 @@ export default function App() {
   // User info from axios request
   const [userObj, setUserObj] = useState({});
 
+
+  
   useEffect(() => {
     if (process.env.NODE_ENV === 'production') {
         axios.get(`${process.env.REACT_APP_PROD}/auth/user`, { headers: {
@@ -64,22 +67,28 @@ export default function App() {
         })
     }
     
+  }, [])
+
+  const userId = authState.id;
+  const username = authState.username;
+
+  useEffect(() => {
+    
     if(process.env.NODE_ENV === 'production') {
-      axios.get(`${process.env.REACT_APP_PROD}/auth/userInfo/${authState.id}`)
+      axios.get(`${process.env.REACT_APP_PROD}/auth/userInfo/${userId}`)
             .then ( (response) => {
                 setUserObj(response)
         })
     } else {
-      axios.get(`${process.env.REACT_APP_DEV}/auth/userInfo/${authState.id}`)
+      axios.get(`${process.env.REACT_APP_DEV}/auth/userInfo/${userId}`)
             .then ( (response) => {
                 setUserObj(response)
         })
     }
     
-  }, [authState, authState.id])
+  }, [userId])
 
-  const userId = authState.id;
-  const username = authState.username;
+  
 
   return (
     <div className='App'>
@@ -92,6 +101,7 @@ export default function App() {
           <Routes>
             <Route element={<Home />} path='/' />
             <Route element={<QuizSearchContainer />} path='/search' />
+            <Route element={<ForumContainer />} path='forum' />
             <Route element={<QuizCategoryList />} path='categories' />
             <Route element={<QuizListByCategory />} path='category/:id' />
             <Route element={<QuizListContainer />} path='quizzes' />
