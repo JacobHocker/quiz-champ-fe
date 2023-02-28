@@ -39,7 +39,8 @@ export default function RandomQuiz() {
                 <p>Well take a look at the random quiz we have generated for you and test your knowledge!</p>
             </div>
             <div className='random-quiz-body'>
-                <div className='quiz-list-card'
+                { randomQuiz.data && 
+                    <div className='quiz-list-card'
                 onClick={() => {navigate(`/quiz/${randomQuiz.id}`)}}>
                     <div className='quiz-thumbnail-container'>
                         <img src={randomQuiz.quizImage} alt={randomQuiz.quizName} className='quiz-card-thumb' />
@@ -82,7 +83,8 @@ export default function RandomQuiz() {
                             <div></div>
                         }
                     </div>
-                </div>
+                    </div>
+                }
             </div>
         </section>
     )
