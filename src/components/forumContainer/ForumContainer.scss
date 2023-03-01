@@ -2,3 +2,83 @@
 @use '../../partials/styles';
 @import '../../partials/mixins';
 
+//FORUM CONTAINER
+.forum-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+//FORUM HEADER
+.forum-header{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 0;
+    background-color: colors.$purple-secondary-var-op;
+    @include medium {
+        width: 80%;
+        border-radius: 4px;
+    }
+    @include large {
+        width: 70%;
+    }
+}
+// NEW POST BTN CONTAINER 
+.forum-btn{
+    background-color: transparent;
+    outline: none;
+    color: white;
+    font-family: styles.$special-text;
+    font-size: 1.25rem;
+    border: 2px solid colors.$blue-accent;
+    padding: 0.5rem;
+    transition: 0.25s ease-in-out;
+    &:hover{
+        cursor: pointer;
+        background-color: colors.$blue-secondary;
+    }
+    @include medium {
+        font-size: 1.5rem;
+    }
+    @include large{
+        font-size: 1.75rem;
+    }
+}
+// FORUM HEADER CONTENT
+.forum-header-content{
+    display: flex;
+    width: 85%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    @include medium{
+        width: 100%;
+    }
+}
+.forum-header-content h1{
+    font-family: styles.$special-text;
+    font-size: 2rem;
+    @include medium {
+        font-size: 2.5rem;
+    }
+    @include large{
+        font-size: 2.75rem;
+    }
+}
+.forum-header-content p{
+    font-family: styles.$header-text;
+    font-size: 1.15rem;
+    @include medium {
+        font-size: 1.3rem;
+    }
+    @include large{
+        font-size: 1.45rem;
+    }
+}
+
+

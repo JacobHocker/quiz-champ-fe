@@ -16,6 +16,7 @@ import UserProfileContainer from './components/userProfileContainer/UserProfileC
 import QuizCategoryList from './components/quizCategoryList/QuizCategoryList';
 import QuizListByCategory from './components/quizListByCategory/QuizListByCategory';
 import ForumContainer from './components/forumContainer/ForumContainer';
+import ForumCreatePost from './components/forumCreatePost/ForumCreatePost';
 
 export default function App() {
 
@@ -101,7 +102,8 @@ export default function App() {
           <Routes>
             <Route element={<Home />} path='/' />
             <Route element={<QuizSearchContainer />} path='/search' />
-            <Route element={<ForumContainer />} path='forum' />
+            <Route element={<ForumCreatePost />} path='forum/new-post' />
+            <Route element={<ForumContainer />} path='forum/posts' />
             <Route element={<QuizCategoryList />} path='categories' />
             <Route element={<QuizListByCategory />} path='category/:id' />
             <Route element={<QuizListContainer />} path='quizzes' />

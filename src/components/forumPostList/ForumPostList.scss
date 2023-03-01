@@ -1,0 +1,126 @@
+@use '../../partials/colors';
+@use '../../partials/styles';
+@import '../../partials/mixins';
+
+// FORUM POST LIST CONTAINER
+.forum-post-list-container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+//POST CARD
+.post-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 18rem;
+    border: 2px solid colors.$neon-purple-accent;
+    border-radius: 10px;
+    background-color: colors.$purple-secondary-op;
+    margin-bottom: 1.5rem;
+    @include medium {
+        width: 23rem;
+    }
+    @include large {
+        width: 29rem;
+    }
+}
+// POST HEADER
+.post-header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: colors.$purple-secondary;
+    width: 100%;
+    border-bottom: 1.25px solid colors.$neon-purple-accent;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem
+}
+.post-header h1{
+    font-family: styles.$special-text;
+    font-size: 1.25rem;
+    width: 90%;
+    text-align: center;
+    @include medium {
+        font-size: 1.5rem;
+    }
+    @include large {
+        font-size: 2rem;
+    }
+}
+.post-content{
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+.post-content p {
+    font-family: styles.$header-text;
+    font-size: 1rem;
+    width: 90%;
+    text-align: center;
+    @include medium {
+        font-size: 1.25rem;
+    }
+    @include large {
+        font-size: 1.5rem;
+    }
+}
+//POST FOOTER
+.post-footer{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+    background-color: colors.$purple-secondary;
+    border-top: 1.25px solid colors.$neon-purple-accent;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding-top: 0.5rem;
+}
+.poster{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+}
+.poster h1{
+    font-family: styles.$special-text;
+    font-size: 1.25rem;
+    width: 90%;
+    text-align: center;
+    @include medium {
+        font-size: 1.5rem;
+    }
+    @include large {
+        font-size: 2rem;
+    }
+}
+.post-likes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+}
+.post-empty-like{
+    font-size: 1.5rem;
+    color: colors.$blue-accent;
+    @include medium {
+        font-size: 1.75rem;
+    }
+    @include large {
+        font-size: 2rem;
+    }
+}
+
+

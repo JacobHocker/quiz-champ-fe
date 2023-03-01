@@ -5,12 +5,11 @@ import { useNavigate } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import './NavBarContainer.scss';
 import {AuthContext} from '../../Helpers/AuthContext';
-import axios from 'axios';
 import navLogo from '../../assets/images/quiz-champ-sm.png';
 
 export default function NavBarContainer() {
     const [expanded, setExpanded] = useState(false);
-    const { userId, setAuthState, username, userObj } = useContext(AuthContext);
+    const { setAuthState, username, userObj } = useContext(AuthContext);
     
 
     let navigate = useNavigate();
@@ -43,7 +42,7 @@ export default function NavBarContainer() {
         setExpanded(!expanded);
     }
     const toForum = () => {
-        navigate('/forum');
+        navigate('/forum/posts');
         setExpanded(!expanded);
     }
     
