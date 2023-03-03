@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { AiOutlineLike, AiFillLike } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
 import './ForumPostList.scss';
 import axios from 'axios';
@@ -12,30 +11,33 @@ export default function ForumPostList() {
     useEffect(() => {
         if (process.env.NODE_ENV === 'production') {
             axios.get(`${process.env.REACT_APP_PROD}/posts`)
-            .then((response) => setPostList(response))
+            .then((response) => setPostList(response.data))
         } else {
             axios.get(`${process.env.REACT_APP_DEV}/posts`)
-            .then((response) => setPostList(response))
+            .then((response) => setPostList(response.data))
         }
-    }, [])
+    }, []);
 
     return (
         <div className='forum-post-list-container'>
-            {postList.data && postList.data.map((post) => (
+            {postList && postList.map((post) => (
                 <div className='post-card' key={post.id}
-                onClick={() => {navigate(`/forum/post/${post.id}`)}}>
-                    <div className='post-header'>
+                >
+                    <div className='post-header'
+                    onClick={() => {navigate(`/forum/post/${post.id}`)}}>
                         <h1>{post.title}</h1>
                     </div>
-                    <div className='post-content'>
+                    <div className='post-content'
+                    onClick={() => {navigate(`/forum/post/${post.id}`)}}>
                         <p>{post.postText}</p>
                     </div>
                     <div className='post-footer'>
                         <div className='poster'>
-                            <h1>{post.username}</h1>
-                        </div>
-                        <div className='post-likes'>
-                            <AiOutlineLike className='post-empty-like'/>
+                            <h1
+                            className='post-user-link-alt'
+                            onClick={() => {navigate(`/profile/${post.username}`)}}>
+                                {post.username}
+                            </h1>
                         </div>
                     </div>
                 </div>

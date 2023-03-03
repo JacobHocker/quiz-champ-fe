@@ -84,9 +84,10 @@
 }
 //POST FOOTER
 .post-footer{
-    display: grid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    grid-template-columns: 50% 50%;
     background-color: colors.$purple-secondary;
     border-top: 1.25px solid colors.$neon-purple-accent;
     border-bottom-right-radius: 8px;
@@ -111,21 +112,12 @@
         font-size: 2rem;
     }
 }
-.post-likes{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: baseline;
-}
-.post-empty-like{
-    font-size: 1.5rem;
-    color: colors.$blue-accent;
-    @include medium {
-        font-size: 1.75rem;
-    }
-    @include large {
-        font-size: 2rem;
-    }
-}
 
 
+.post-user-link-alt{
+    transition: 0.25s ease-in-out;
+    &:hover {
+        color: colors.$blue-accent;
+        cursor: pointer;
+    }
+}

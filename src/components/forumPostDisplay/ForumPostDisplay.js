@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { AiOutlineLike, AiFillLike, AiOutlineArrowLeft } from 'react-icons/ai';
+import {  AiOutlineArrowLeft } from 'react-icons/ai';
 import './ForumPostDisplay.scss';
 import ForumCommentSection from '../forumCommentSection/ForumCommentSection';
 
@@ -52,9 +52,6 @@ export default function ForumPostDisplay() {
                                 >
                                     {post.data.username}
                                 </h1>
-                            </div>
-                            <div className='post-likes-alt'>
-                                <AiOutlineLike className='post-empty-like-alt'/>
                             </div>
                         </div>
                     </div>
