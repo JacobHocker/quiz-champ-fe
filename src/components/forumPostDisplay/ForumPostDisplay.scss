@@ -1,3 +1,168 @@
 @use '../../partials/colors';
 @use '../../partials/styles';
 @import '../../partials/mixins';
+
+//FORUM POST DISPLAY CONTAINER
+.forum-post-display-container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+// FORUM POST DISPLAY HEADER
+.forum-post-display-header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+}
+//POST COMMENT DISPLAY CONTAINER
+.post-comment-display-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    @include medium {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap: 1rem;
+    }
+    @include large{
+        margin-top: 2rem;
+    }
+}
+// POST SIDE    
+.post-side {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+// COMMENT SIDE
+.comment-side{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+// POST CARD ALT
+.post-card-alt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 2px solid colors.$blue-accent;
+    background-color: colors.$blue-secondary-op;
+    margin-bottom: 1.5rem;
+    @include medium {
+        //width: 70%;
+    }
+    @include large {
+       // width: 80%;
+    }
+}
+// POST HEADER
+.post-header-alt{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: colors.$blue-secondary;
+    width: 100%;
+    border-bottom: 1.25px solid colors.$blue-accent;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    
+}
+.post-header-alt h1{
+    font-family: styles.$special-text;
+    font-size: 1.25rem;
+    width: 90%;
+    text-align: center;
+    @include medium {
+        font-size: 1.5rem;
+    }
+    @include large {
+        font-size: 2rem;
+    }
+}
+.post-content-alt{
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+.post-content-alt p {
+    font-family: styles.$header-text;
+    font-size: 1rem;
+    width: 90%;
+    text-align: center;
+    @include medium {
+        font-size: 1.25rem;
+    }
+    @include large {
+        font-size: 1.5rem;
+    }
+}
+//POST FOOTER
+.post-footer-alt{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+    background-color: colors.$blue-secondary;
+    border-top: 1.25px solid colors.$blue-accent;
+    padding-top: 0.5rem;
+    
+}
+.poster-alt{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+}
+.poster-alt h1{
+    font-family: styles.$special-text;
+    font-size: 1.25rem;
+    width: 90%;
+    text-align: center;
+    @include medium {
+        font-size: 1.5rem;
+    }
+    @include large {
+        font-size: 2rem;
+    }
+}
+.post-likes-alt{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+}
+.post-empty-like-alt{
+    font-size: 1.5rem;
+    color: colors.$purple-accent;
+    @include medium {
+        font-size: 1.75rem;
+    }
+    @include large {
+        font-size: 2rem;
+    }
+}
+.post-user-link{
+    transition: 0.25s ease-in-out;
+    &:hover {
+        color: colors.$purple-accent;
+        cursor: pointer;
+    }
+}

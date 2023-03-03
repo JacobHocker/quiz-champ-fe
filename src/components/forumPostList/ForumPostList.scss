@@ -22,11 +22,16 @@
     border-radius: 10px;
     background-color: colors.$purple-secondary-op;
     margin-bottom: 1.5rem;
+    transition: 0.2s ease-in-out;
     @include medium {
         width: 23rem;
     }
     @include large {
         width: 29rem;
+    }
+    &:hover{
+        cursor: pointer;
+        border: 2px solid colors.$blue-accent;
     }
 }
 // POST HEADER

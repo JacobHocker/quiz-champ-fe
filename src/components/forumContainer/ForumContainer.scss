@@ -48,6 +48,26 @@
         font-size: 1.75rem;
     }
 }
+.purple-forum-btn{
+    background-color: transparent;
+    outline: none;
+    color: white;
+    font-family: styles.$special-text;
+    font-size: 1.25rem;
+    border: 2px solid colors.$purple-accent;
+    padding: 0.5rem;
+    transition: 0.25s ease-in-out;
+    &:hover{
+        cursor: pointer;
+        background-color: colors.$purple-secondary;
+    }
+    @include medium {
+        font-size: 1.5rem;
+    }
+    @include large{
+        font-size: 1.75rem;
+    }
+}
 // FORUM HEADER CONTENT
 .forum-header-content{
     display: flex;

@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { AiOutlineLike, AiFillLike } from 'react-icons/ai';
+import { useNavigate } from 'react-router-dom';
 import './ForumPostList.scss';
 import axios from 'axios';
 
 export default function ForumPostList() {
     const [postList, setPostList] = useState([]);
 
+    const navigate = useNavigate();
+    
     useEffect(() => {
         if (process.env.NODE_ENV === 'production') {
             axios.get(`${process.env.REACT_APP_PROD}/posts`)
@@ -19,7 +22,8 @@ export default function ForumPostList() {
     return (
         <div className='forum-post-list-container'>
             {postList.data && postList.data.map((post) => (
-                <div className='post-card' key={post.id}>
+                <div className='post-card' key={post.id}
+                onClick={() => {navigate(`/forum/post/${post.id}`)}}>
                     <div className='post-header'>
                         <h1>{post.title}</h1>
                     </div>
