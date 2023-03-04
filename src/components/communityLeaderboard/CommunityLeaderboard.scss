@@ -1,0 +1,134 @@
+@use '../../partials/colors';
+@use '../../partials/styles';
+@import '../../partials/mixins';
+
+// COMMUNITY LEADERBOARD CONTAINER
+.community-leaderboard-container{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+// COM LEADERBOARD HEADER
+.com-leaderboard-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+//LEADERBOARD TITLE
+.leaderboard-title{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+.leaderboard-title h1{
+    font-family: styles.$special-text;
+    font-size: 1.5rem;
+    @include medium {
+        font-size: 2.5rem;
+    }
+    @include large{
+        font-size: 3.5rem;
+    }
+}
+.crown-left, .crown-right {
+    width: 2.5rem;
+    @include medium {
+        width: 3.5rem;
+    }
+    @include large{
+        width: 4.5rem;
+    }
+}
+.crown-left{
+    @include medium{
+        margin-right: 0.75rem;
+    }
+}
+.crown-right{
+    @include medium{
+        margin-left: 0.75rem;
+    }
+}
+// LEADERBOARD DESCRIPTION
+.leaderboard-description{
+    margin-top: 1rem;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.leaderboard-description p {
+    font-family: styles.$header-text;
+    font-size: 1.05rem;
+    @include large {
+        font-size: 1.25rem;
+    }
+}
+//TOP TEN TABLE
+.leader-table{
+    margin-top: 1rem;
+    background: colors.$blue-secondary-op;
+    border: 3px solid colors.$blue-accent;
+}
+.leader-table th{
+    text-align: center;
+    font-family: styles.$special-text;
+    border: 2.5px solid colors.$blue-accent;
+    padding: 0.5rem;
+    @include medium{
+        font-size: 1.1rem;
+    }
+    @include large{
+        font-size: 1.25rem;
+    }
+}
+.leader-table td{
+    text-align: center;
+    font-family: styles.$header-text;
+    border: 2px solid colors.$blue-accent;
+    padding: 0.5rem;
+    @include medium{
+        font-size: 1.1rem;
+    }
+    @include large{
+        font-size: 1.25rem;
+    }
+}
+
+// HIGHLIGHT USER 
+.highlight-rank{
+    color: colors.$purple-accent;
+}
+.highlight-tier{
+    color: colors.$purple-accent;
+}
+.highlight-crown{
+    color: colors.$purple-accent;
+}
+.highlight-user{
+    transition: 0.15s ease-in;
+    color: colors.$purple-accent;
+    &:hover{
+        cursor: pointer;
+        color: colors.$neon-purple-accent;
+    }
+}
+// TOP TEN CROWN
+.top-ten-crown{
+    width: 3rem;
+    @include large{
+        width: 4rem;
+    }
+}
+
+// USER LINK
+.leader-user-link{
+    transition: 0.15s ease-in;
+    &:hover{
+        cursor: pointer;
+        color: colors.$neon-purple-accent;
+    }
+}

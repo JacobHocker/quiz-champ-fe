@@ -18,6 +18,12 @@ export default function ForumPostList() {
         }
     }, []);
 
+    postList.sort((a,b) => {
+        return new Date(b.createdAt) - new Date(a.createdAt)
+    });
+
+    
+
     return (
         <div className='forum-post-list-container'>
             {postList && postList.map((post) => (

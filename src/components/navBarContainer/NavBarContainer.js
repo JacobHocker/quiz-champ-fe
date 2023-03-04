@@ -45,6 +45,10 @@ export default function NavBarContainer() {
         navigate('/forum/posts');
         setExpanded(!expanded);
     }
+    const toLeaderboard = () => {
+        navigate('/leaderboard');
+        setExpanded(!expanded);
+    }
     
 
     const logout = () => {
@@ -85,7 +89,7 @@ export default function NavBarContainer() {
                                     Forum
                                 </NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.3">
+                                <NavDropdown.Item onClick={toLeaderboard}>
                                     Leaderboard
                                 </NavDropdown.Item>
                             </NavDropdown>

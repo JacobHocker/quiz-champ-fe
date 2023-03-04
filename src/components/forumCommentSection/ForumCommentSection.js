@@ -54,7 +54,9 @@ export default function ForumCommentSection() {
         
     }
     
-    
+    commentList.sort((a,b) => {
+        return new Date(b.createdAt) - new Date(a.createdAt)
+    });
     
     
     return (
