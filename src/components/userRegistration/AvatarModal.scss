@@ -2,6 +2,7 @@
 @use '../../partials/styles';
 @import '../../partials/mixins';
 
+
 .avatar-modal{
     width: 100%;
     height: 100%;
@@ -11,13 +12,50 @@
     align-items: center;
     justify-content: center;
     margin-top: 0.5rem;
+
 }
 .avatar-modal-content{
     width: 100%;
     
 }
-.avatar-modal-header, .avatar-modal-footer{
+// CLOSE MODAL
+.close-modal{
+    position: absolute;
+    right: 45px;
+    bottom: 405px;
+    @include medium {
+        bottom: 370px;
+        right: 100px;
+    }
+    @include large {
+        bottom: 325px;
+        right: 120px;
+    }
+    
+}
+.red-btn-alt{
+    outline: none;
+    font-family: styles.$special-text;
+    font-size: 0.95rem;
+    padding: 0.25rem;
+    color: white;
+    border: 2px solid red;
+    background-color: transparent;
+    transition: 0.25s ease-in-out;
+    &:hover{
+        cursor: pointer;
+        background-color: red;
+    }
+    @include medium{
+        font-size: 1.15rem;
+    }
+    @include large{
+        font-size: 1.35rem;
+    }
+}
+.avatar-modal-header{
     display: flex;
+    width: 100%;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -27,9 +65,9 @@
     margin: 0;
 }
 .avatar-modal-body{
+    height: 27rem;
     padding: 2rem 6rem;
     border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
     display: grid;
     gap: 1rem;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -42,8 +80,8 @@
     }
 }
 .selected-reg-avatar{
-    width: 4rem;
-    height: 4rem;
+    width: 5rem;
+    height: 5rem;
     border-radius: 50%;
     object-fit: cover;
     object-position: center;

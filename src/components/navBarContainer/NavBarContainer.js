@@ -54,6 +54,7 @@ export default function NavBarContainer() {
     const logout = () => {
         localStorage.removeItem("accessToken")
         setAuthState({ username: "", id: 0, status: false })
+        navigate("/");
     };
 
     return (

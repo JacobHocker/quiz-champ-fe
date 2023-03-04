@@ -2,6 +2,11 @@
 @use '../../partials/styles';
 @import '../../partials/mixins';
 
+//AUTH CONTAINER
+.auth-container{
+    margin-bottom: 10rem;
+}
+
 /* ! AVATAR AUTH BUTTON */
 .avatar-auth-btn{
     margin-top: 1rem;
