@@ -15,10 +15,10 @@ export default function ForumPostDisplay() {
     useEffect(() => {
         if (process.env.NODE_ENV === 'production') {
             axios.get(`${process.env.REACT_APP_PROD}/posts/post/${id}`)
-            .then((response) => setPost(response))
+            .then((response) => setPost(response.data))
         } else {
             axios.get(`${process.env.REACT_APP_DEV}/posts/post/${id}`)
-            .then((response) => setPost(response))
+            .then((response) => setPost(response.data))
         }
         
     }, [id])
@@ -36,13 +36,13 @@ export default function ForumPostDisplay() {
             </div>
             <div className='post-comment-display-container'>
                 <div className='post-side'>
-                    { post.data &&
+                    { post &&
                     <div className='post-card-alt'>
                         <div className='post-header-alt'>
-                            <h1>{post.data.title}</h1>
+                            <h1>{post.title}</h1>
                         </div>
                         <div className='post-content-alt'>
-                            <p>{post.data.postText}</p>
+                            <p>{post.postText}</p>
                         </div>
                         <div className='post-footer-alt'>
                             <div className='poster'>
@@ -50,7 +50,7 @@ export default function ForumPostDisplay() {
                                     className='post-user-link'
                                     onClick={() => {navigate(`/profile/${post.data.username}`)}}
                                 >
-                                    {post.data.username}
+                                    {post.username}
                                 </h1>
                             </div>
                         </div>
