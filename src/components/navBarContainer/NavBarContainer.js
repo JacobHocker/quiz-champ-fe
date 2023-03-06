@@ -94,9 +94,13 @@ export default function NavBarContainer() {
                                     Leaderboard
                                 </NavDropdown.Item>
                             </NavDropdown>
+                            { username === 'Jake' ?
                             <Nav.Link onClick={toAdmin}>
                                 <h2 className='nav-link'>Admin</h2>
                             </Nav.Link>
+                            :
+                            <div></div>
+                            }
                         
                                 {userObj.data && 
                                     <img src={userObj.data.avatar} className='nav-avatar' alt={userObj.data.username}  onClick={toProfile}/>
