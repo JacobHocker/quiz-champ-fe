@@ -29,7 +29,8 @@ export default function QuizEnd({ questionList, quizId }) {
             setCrownAmount(0)
         }
         
-    }, [quizScore])
+    }, [quizScore, crownAmount])
+
 
     const addScore = () => {
         if(process.env.NODE_ENV === 'production'){

@@ -11,9 +11,10 @@ import axios from 'axios';
 
 export default function QuizResults({  crownAmount, setCrownAmount }) {
     const [secondAttemptCrowns, setSecondAttemptCrowns] = useState(0);
+    const [quizUserObj, setQuizUserObj] = useState({});
     let navigate = useNavigate();
     const { quizScore, scoreArr} = useContext(QuizContext);
-    const { userId, userObj } = useContext(AuthContext);
+    const { userId } = useContext(AuthContext);
 
     useEffect(() => {
         if(scoreArr.data.length === 1) {
@@ -26,9 +27,24 @@ export default function QuizResults({  crownAmount, setCrownAmount }) {
         
     }, [scoreArr])
     
+    useEffect(() => {
+        if(process.env.NODE_ENV === 'production') {
+            axios.get(`${process.env.REACT_APP_PROD}/auth/userInfo/${userId}`)
+                .then ( (response) => {
+                    setQuizUserObj(response.data)
+            })
+        } else {
+            axios.get(`${process.env.REACT_APP_DEV}/auth/userInfo/${userId}`)
+                .then ( (response) => {
+                    setQuizUserObj(response.data)
+            })
+        }
+    }, [])
+    
+
     const saveAndReturn = () => {
-        let totalCrown = userObj.data.totalCrown + crownAmount
-        let totalCrownTwo = userObj.data.totalCrown + secondAttemptCrowns
+        let totalCrown = quizUserObj.totalCrown + crownAmount
+        let totalCrownTwo = quizUserObj.totalCrown + secondAttemptCrowns
 
         if (scoreArr.data.length === 0) {
             if(process.env.NODE_ENV === 'production') {
