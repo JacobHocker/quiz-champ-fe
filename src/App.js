@@ -106,7 +106,6 @@ export default function App() {
             <Route element={<Home />} path='/' />
             <Route element={<QuizSearchContainer />} path='/search' />
             <Route element={<CommunityLeaderboard />} path='leaderboard' />
-            <Route element={<CommunityContact />} path='contact-us' />
             <Route element={<ForumCreatePost />} path='forum/new-post' />
             <Route element={<ForumContainer />} path='forum/posts' />
             <Route element={<ForumPostDisplay />} path='forum/post/:id' />
@@ -116,6 +115,7 @@ export default function App() {
             <Route element={<QuizDisplayContainer />} path='quiz/:id' />
             <Route element={<UserProfileContainer />} path='profile/:username' />
             <Route element={<QuizRuleContainer />} path='rules-rewards-info' />
+            <Route element={<CommunityContact />} path='contact-us' />
             <Route element={<AdminContainer />} path='admin' />
             <Route element={<UserRegistration />} path='registration' />
             <Route element={<UserLogin />} path='login' />

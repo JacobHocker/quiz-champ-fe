@@ -17,9 +17,7 @@ export default function NavBarContainer() {
     const toHome = () => {
         navigate('/');
     }
-    const toContact = () => {
-        navigate("/contact-us");
-    }
+    
     const toCategories = () => {
         navigate('/categories');
         setExpanded(!expanded);
@@ -52,7 +50,9 @@ export default function NavBarContainer() {
         navigate('/leaderboard');
         setExpanded(!expanded);
     }
-    
+    const toContact = () => {
+        navigate("/contact-us");
+    }
 
     const logout = () => {
         localStorage.removeItem("accessToken")
