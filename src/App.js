@@ -19,6 +19,7 @@ import ForumContainer from './components/forumContainer/ForumContainer';
 import ForumCreatePost from './components/forumCreatePost/ForumCreatePost';
 import ForumPostDisplay from './components/forumPostDisplay/ForumPostDisplay';
 import CommunityLeaderboard from './components/communityLeaderboard/CommunityLeaderboard';
+import CommunityContact from './components/communityContact/CommunityContact';
 
 export default function App() {
 
@@ -105,6 +106,7 @@ export default function App() {
             <Route element={<Home />} path='/' />
             <Route element={<QuizSearchContainer />} path='/search' />
             <Route element={<CommunityLeaderboard />} path='leaderboard' />
+            <Route element={<CommunityContact />} path='contact-us' />
             <Route element={<ForumCreatePost />} path='forum/new-post' />
             <Route element={<ForumContainer />} path='forum/posts' />
             <Route element={<ForumPostDisplay />} path='forum/post/:id' />

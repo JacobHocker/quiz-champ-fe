@@ -1,0 +1,169 @@
+@use '../../partials/colors';
+@use '../../partials/styles';
+@import '../../partials/mixins';
+
+
+// COMMUNITY CONTACT CONTAINER
+.community-contact-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+//CONTACT HEADER
+.contact-header h1{
+    font-family: styles.$special-text;
+    font-size: 2.5rem;
+    @include medium {
+        font-size: 2.75rem;
+    }
+    @include large {
+        font-size: 3rem;
+    }
+}
+
+// CREDITS CONTAINER
+.credits-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 0rem;
+    margin-top: 2rem;
+    background-color: colors.$purple-secondary-op;
+    @include medium {
+        width: 80%;
+        border-radius: 10px;
+    }
+    @include large {
+        width: 60%;
+    }
+}
+.credits-container h1{
+    font-family: styles.$special-text;
+    font-size: 1.75rem;
+    @include medium {
+        font-size: 2rem;
+    }
+    @include large {
+        font-size: 2.25rem;
+    }
+}
+.credit-list{
+    list-style: none;
+}
+.credit-item{
+    font-family: styles.$header-text;
+    font-size: 1.15rem;
+    @include medium {
+        font-size: 1.45rem;
+    }
+    @include large {
+        font-size: 1.75rem;
+    }
+}
+// LINKS CONTAINER
+.links-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 0rem;
+    margin-top: 2rem;
+    background-color: colors.$purple-secondary-op;
+    @include medium {
+        width: 80%;
+        border-radius: 10px;
+    }
+    @include large {
+        width: 60%;
+    }
+}
+.links-container h1{
+    font-family: styles.$special-text;
+    font-size: 1.75rem;
+    @include medium {
+        font-size: 2rem;
+    }
+    @include large {
+        font-size: 2.25rem;
+    }
+}
+.link-list{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+}
+.link-item{
+    font-family: styles.$header-text;
+    font-size: 1.15rem;
+    @include medium {
+        font-size: 1.45rem;
+    }
+    @include large {
+        font-size: 1.75rem;
+    }
+}
+.contact-link{
+    color: colors.$blue-accent;
+    font-size: 2.25rem;
+    transition: 0.25s ease-in-out;
+    @include medium {
+        font-size: 2.75rem;
+    }
+    @include large {
+        font-size: 3.5rem;
+    }
+    &:hover{
+        cursor: pointer;
+        color: colors.$purple-accent;
+    }
+}
+// BUILT WITH CONTAINER
+.tech-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 0rem;
+    margin-top: 2rem;
+    background-color: colors.$purple-secondary-op;
+    @include medium {
+        width: 80%;
+        border-radius: 10px;
+    }
+    @include large {
+        width: 60%;
+    }
+}
+.tech-container h1{
+    font-family: styles.$special-text;
+    font-size: 1.75rem;
+    @include medium {
+        font-size: 2rem;
+    }
+    @include large {
+        font-size: 2.25rem;
+    }
+}
+.tech-list{
+    list-style: square;
+}
+.tech-item{
+    font-family: styles.$header-text;
+    font-size: 1.15rem;
+    @include medium {
+        font-size: 1.45rem;
+    }
+    @include large {
+        font-size: 1.75rem;
+    }
+}

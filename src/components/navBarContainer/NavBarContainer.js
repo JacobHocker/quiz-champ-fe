@@ -17,6 +17,9 @@ export default function NavBarContainer() {
     const toHome = () => {
         navigate('/');
     }
+    const toContact = () => {
+        navigate("/contact-us");
+    }
     const toCategories = () => {
         navigate('/categories');
         setExpanded(!expanded);
@@ -92,6 +95,10 @@ export default function NavBarContainer() {
                                 <NavDropdown.Divider />
                                 <NavDropdown.Item onClick={toLeaderboard}>
                                     Leaderboard
+                                </NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item onClick={toContact}>
+                                    Contact Us
                                 </NavDropdown.Item>
                             </NavDropdown>
                             { username === 'Jake' ?
