@@ -60,6 +60,9 @@
     &:focus{
         outline: none;
     }
+    &:focus::placeholder{
+        color: transparent;
+    }
 }
 .auth-btn{
     margin-top: 2rem;

@@ -95,11 +95,9 @@
 }
 .link-list{
     display: grid;
-    width: 100%;
+    width: 50%;
     grid-template-columns: 1fr 1fr 1fr;
     list-style: none;
-    justify-content: center;
-    align-items: center;
 }
 .link-item{
     font-family: styles.$header-text;
@@ -155,7 +153,11 @@
     }
 }
 .tech-list{
-    list-style: square;
+    display: grid;
+    width: 100%;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    list-style: none;
 }
 .tech-item{
     font-family: styles.$header-text;
