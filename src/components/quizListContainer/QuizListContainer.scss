@@ -54,12 +54,14 @@
     justify-content: center;
     align-items: center;
     border-radius: 7px;
-    background-image: linear-gradient(to bottom, colors.$purple-primary-dk, colors.$blue-secondary, colors.$purple-primary-dk);
+    background-color: colors.$purple-secondary-nav;
+    //background-image: linear-gradient(to bottom, colors.$purple-primary-dk, colors.$blue-secondary, colors.$purple-primary-dk);
     overflow: hidden;
     &:hover{
         cursor: pointer;
         border-radius: 7px;
-        border: 1px solid colors.$blue-accent;
+        transform: scale(110%);
+        box-shadow: 0 0 2px 2px colors.$blue-accent;
     }
     @include medium{
         height: 20rem;

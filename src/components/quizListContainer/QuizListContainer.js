@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 import './QuizListContainer.scss';
 import axios from 'axios';
+import {motion} from 'framer-motion';
 
 export default function QuizListContainer() {
     const [quizListDisplay, setQuizListDisplay] = useState([]);
@@ -36,8 +37,14 @@ export default function QuizListContainer() {
             </div>
             <div className='quiz-list-container'>
                 {quizListDisplay.data && quizListDisplay.data.map((val) => (
-                    <div className='quiz-list-card' key={val.id}
-                    onClick={() => {navigate(`/quiz/${val.id}`)}}>
+                    
+                    <motion.div className='quiz-list-card' key={val.id}
+                    onClick={() => {navigate(`/quiz/${val.id}`)}}
+                    initial={{ opacity: 0}}
+                    whileInView={{ opacity: 1}}
+                    transition={{ duration: 1.5}}
+                    
+                    >
                         <div className='quiz-thumbnail-container'>
                             <img src={val.quizImage} alt={val.quizName} className='quiz-card-thumb' />
                         </div>
@@ -81,7 +88,7 @@ export default function QuizListContainer() {
                         </div>
                         
                         
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </div>

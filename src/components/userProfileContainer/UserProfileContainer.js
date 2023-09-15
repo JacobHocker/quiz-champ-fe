@@ -31,6 +31,7 @@ export default function UserProfileContainer() {
     }, [username])
 
 
+
     return (
         <div className='user-profile-container'>
             {   userPageInfo.data && 
@@ -38,7 +39,7 @@ export default function UserProfileContainer() {
                 <img src={userPageInfo.data.avatar} alt={`${userPageInfo.data.username}-profile`} className='profile-avatar' />
                 <div className='profile-header-title'>
                     <h1>{userPageInfo.data.username}</h1>
-                    <img src={userPageInfo.data.country} alt='country-flag' className='profile-flag' />
+                    
                 </div>
             </section>
             }
