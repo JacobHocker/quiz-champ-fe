@@ -54,7 +54,7 @@ export default function TopTenLeaderboard() {
                         </tr>
                     </thead>
                     <tbody>
-                        {leaderboardList === [] ? 
+                        {leaderboardList.length === 0 ? 
                         <tr className='top-ten-data'>
                             <td>N/A</td>
                             <td>N/A</td>

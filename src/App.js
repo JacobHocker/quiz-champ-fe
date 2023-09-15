@@ -8,7 +8,7 @@ import UserAuthContainer from './components/userAuthContainer/UserAuthContainer'
 import AdminContainer from './components/adminContainer/AdminContainer';
 import QuizSearchContainer from './components/quizSearchContainer/QuizSearchContainer';
 import Home from './components/home/Home';
-import NavBarContainer from './components/navBarContainer/NavBarContainer';
+
 import QuizListContainer from './components/quizListContainer/QuizListContainer';
 import QuizDisplayContainer from './components/quizDisplayContainer/QuizDisplayContainer';
 import QuizRuleContainer from './components/quizRuleContainer/QuizRuleContainer';
@@ -20,6 +20,7 @@ import ForumCreatePost from './components/forumCreatePost/ForumCreatePost';
 import ForumPostDisplay from './components/forumPostDisplay/ForumPostDisplay';
 import CommunityLeaderboard from './components/communityLeaderboard/CommunityLeaderboard';
 import CommunityContact from './components/communityContact/CommunityContact';
+import Navbar from './components/navbar/Navbar';
 
 export default function App() {
 
@@ -101,7 +102,8 @@ export default function App() {
         <UserAuthContainer />
       :
         <div>
-          <NavBarContainer />
+          {/* <NavBarContainer /> */}
+          <Navbar />
           <Routes>
             <Route element={<Home />} path='/' />
             <Route element={<QuizSearchContainer />} path='/search' />
