@@ -19,7 +19,7 @@
     }
 }
 .nav-btn{
-    padding: 0.5rem 1rem;
+    padding: 0.25rem 0.5rem;
     background: transparent;
     border: 2px solid colors.$purple-accent;
     color: white;
@@ -117,8 +117,8 @@
     gap: 1rem;
 }
 .mobile-nav-avatar{
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
     object-fit: cover;
     border-radius: 50%;
     &:hover{

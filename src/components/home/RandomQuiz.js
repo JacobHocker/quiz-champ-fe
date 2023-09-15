@@ -34,7 +34,7 @@ export default function RandomQuiz() {
     return (
         <section className='random-quiz-container'>
             <div className='random-quiz-header'>
-                <h1>Random Quiz Generator</h1>
+                <h1>Random Quiz</h1>
                 <p>Don't know what quiz to take? Maybe you don't feel like searching for one?</p>
                 <p>Well take a look at the random quiz we have generated for you and test your knowledge!</p>
             </div>
