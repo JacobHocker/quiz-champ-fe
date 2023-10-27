@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Quiz Champ
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### [Linked In](https://www.linkedin.com/in/jacobhocker/) 
 
-In the project directory, you can run:
+### [Portfolio](https://jacob-hocker.vercel.app/)
 
-### `npm start`
+### [Medium](https://jacobhocker.medium.com/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+A full stack application, as well as fully responsive,  where users create an account and take quizzes, earn crowns through high scores, and rank on a leaderboard.  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The application also includes a community aspect with a forum section with the ability to create posts and comments.
 
-### `npm test`
+![QuizChampThumb](/public/images/QuizChampThumb.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Quizzes 
 
-### `npm run build`
+> Choose from a variety of quizzes with an array of difficulties to test your skills
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Each individual user will have 2 attempts at a quiz.  The maximum score on the first try will automatically close out the quiz for that user.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Based on the score the user will recieve a certain amount of crowns which will be permanetly added to their profile in their crown total.  The higher amount of crowns a user has the higher on the leaderboard they will be.
 
-### `npm run eject`
+If on the first attempt the user recieves three crowns and on the second attempt the user recieves four crowns.  The total crown amount will be adjusted accordingly and increase by one.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![QuizzesPage](/public/images/QuizChampQuizPage.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Profile 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+When the user creates an account they will be given options for the profile picture they would like.  QuizChamp has a library of avatars to choose from.  The user creates a username they will be known by and can write a breif bio about themselves.
 
-## Learn More
+The rest of the profile page will show the users total crown amounts, as well as, the Crown tier they are currently at.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![QCProfilePage](/public/images/QCProfilePage.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Community 
 
-### Code Splitting
+The community tab has three sections: 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+ - Leaderboard - to compare the complete list of players and their scores
 
-### Analyzing the Bundle Size
+ - Forum - where users make post and can comment and connect
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+ - Contact Us - where users can reach directly out to the developer for any questions or if they are just wanting to talk
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ ![PostComment](/public/images/PostComment.png)
